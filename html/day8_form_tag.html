@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding:0;
+
+        }
+    </style>
+
+    
+</head>
+<body>
+    <h1>HTML FORMS</h1>
+<!-- Attributes of form tag
+
+ 1.action=what to perform after for submission
+ 2.method= way of passing data - GET/POST
+ 3.enctype=encrypt data-->
+
+    <!-- <form action="">
+
+        fetch user input 
+         type="text/email/password/color/number/search/radio/file/hidden/checkbox/tel/range"
+         name and id must be unique
+         name="user to store data in database"
+         id="used in css for styling and js for logical work"
+         <input type="text" name="username" id="username">
+
+    </form> 
+
+    *******************************************************
+
+    Additional Attributes:
+
+    1.value=used is for deevloper/use to set bydefault values
+    1.required= maditary field
+    2.placeholder= by default for guide value/instruction
+    3.readonly= can just read
+    4.disable= no action should be taken currently
+    5.checked= bydefault checked option
+    6.selected= bydefault selected option 
+    7.multiple= for selection of multiple files /to upload multiple files 
+    8.pattern=validation rule for password/email/phone no.-->
+    
+    <hr>
+    <h1>Personal data</h1>
+    <br>
+    <br>
+    <form action="">
+        <label for="">Enter Your Name</label>
+        <input type="text"name="firstname"id="firstname">
+        <br>
+        <br>
+        <label for="">Enter Your email</label>
+        <input type="email" name="email" id="email">
+        <br>
+        <br>
+        <label for="">Enter Your Password <sup style="color: red;">*</sup></label>
+        <input type="password"name="password"id="password">
+        <br>
+        <br>
+        <label for="">Mobile No.</label>
+        <input type="number"name="no."id="no.">
+        <br>
+        <br>
+        <label for="">Book an Appointment</label>
+        <input type="date" name="date" id="date">
+        <br>
+        <br>
+        <label for="">Book Your Slot</label>
+        <input type="time" name="time" id="time">
+        <br>
+        <br>
+
+        <!-- ********************************************************* -->
+        <label for="">Your Gender</label>
+        <!-- for radio button for selecting just 1 option write name and id same for all options
+          value(attribute)its use for backend for developer -->
+        <input type="radio"name="gender"id="gender"><span>male</span>
+        <input type="radio"name="gender"id="gender"><span>female</span>
+        <input type="radio"name="gender"id="gender"><span>prefer not to say</span>
+        <br>
+        <br>
+        <label for="">Upload Your Profilr</label>
+        <input type="file" name="profile" id="profile">
+        <br>
+        <br>
+        <label for="">Choose Your Courses</label>
+        <!-- for multiple input is given by user
+         value(attribute)its use for backend for developer-->
+        <input type="checkbox" name="courses" id="courses"value="frontend"><span>frontend</span>
+        <input type="checkbox" name="courses" id="courses"><span>backend</span>
+        <input type="checkbox" name="courses" id="courses"><span>database</span>
+        <input type="checkbox" name="courses" id="courses"><span>devops</span>
+        <input type="checkbox" name="courses" id="courses"><span>AI fullstack</span>
+        <input type="checkbox" name="courses" id="courses"><span>GenAI</span>
+        <br>
+        <br>
+        <label for="">search</label>
+        <input type="search">
+        <br>
+        <br>
+        <label for="">Choose Your Color</label>
+        <input type="color">
+        <br>
+        <br>
+
+        <!-- dropdown box -->
+        <label for="">Choose Your education
+        <select name="education" id="education">
+            <!-- value is for deevloper/use to set bydefault values -->
+            <option value="none">select</option>
+            <option value="BSC/BCS">BCA/BCS</option>
+            <option value="BE/BTech">BE/BTech</option>
+            <option value="ME/MTech">ME/MTech</option>
+            <option value="other">Other</option>
+        </select>
+        </label>
+        <br>
+        <br>
+
+        <!-- textarea tag -->
+        <label for="">send a msg</label>
+        <textarea name="msg" id="msg"style="width:100%;height:80px"></textarea>
+        <br>
+        <br>
+
+        <!-- for call options in websites -->
+        <label for="">Telephone no</label>
+        <input type="tel"name=""value=""id="">
+        <br>
+        <br>
+
+        <!-- range -->
+         <label for="">Range</label>
+         <input type="range">
+
+        <!-- button have 2 options -->
+        <button>save form</button>
+        <input type="submit" name=""id="">
+
+        <!-- reset form-->
+        <input type="reset">
+    </form>
+</body>
+</html>

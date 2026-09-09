@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Data Types</title>
+</head>
+
+<body>
+
+    <h1>Data Types In JS</h1>
+    <hr>
+
+
+    <!-- ========================================================= -->
+    <!--                    INTERNAL JAVASCRIPT                    -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        // =========================================================
+        // VARIABLE
+        // =========================================================
+
+        // 'let' is used to declare a variable.
+        // Here, the variable 'name' stores a string value.
+        let name = "Anushka";
+
+        console.log(name);
+
+
+        // =========================================================
+        //                    DATA TYPES IN JS
+        // =========================================================
+
+        /*
+            Data Type:
+            A data type tells JavaScript what kind of value
+            a variable is storing.
+
+            Example:
+                10       → Number
+                "Hello"  → String
+                true     → Boolean
+        */
+
+
+        // =========================================================
+        // PRIMITIVE DATA TYPES (PDT)
+        // =========================================================
+
+        /*
+            Primitive Data Types:
+            
+            These are the basic/built-in data types in JavaScript.
+
+            JavaScript has 7 primitive data types:
+
+            1. Number
+            2. String
+            3. Boolean
+            4. Undefined
+            5. Null
+            6. BigInt
+            7. Symbol
+
+            Primitive values store a single/simple value.
+        */
+
+
+        // ---------------------------------------------------------
+        // Important:
+        // JavaScript does NOT have separate int, float, double,
+        // char, long, etc. like C/C++/Java.
+        //
+        // JavaScript mainly uses:
+        // Number → for integers and decimal numbers
+        // ---------------------------------------------------------
+
+
+        // =========================================================
+        // NON-PRIMITIVE / REFERENCE DATA TYPES
+        // =========================================================
+
+        /*
+            Non-Primitive Data Types are used to store collections
+            or more complex data.
+
+            Common examples:
+
+            1. Object
+            2. Array
+            3. Function
+
+            Note:
+            Technically, JavaScript's specification classifies
+            functions as objects, and arrays are also objects.
+        */
+
+
+        // =========================================================
+        //                    PRIMITIVE TYPES
+        // =========================================================
+
+
+        // =========================================================
+        // 1. NUMBER
+        // =========================================================
+
+        /*
+            Number is used to store numeric values.
+
+            It can store:
+            - Positive numbers
+            - Negative numbers
+            - Integers
+            - Decimal numbers
+
+            Example:
+                30
+                -10
+                30.5
+                1000
+        */
+
+        let age = 30;
+
+        // Decimal value
+        let Person_B_Age = 30.5;
+
+        console.log(age);
+        console.log(Person_B_Age);
+
+
+        // ---------------------------------------------------------
+        // typeof OPERATOR
+        // ---------------------------------------------------------
+
+        /*
+            typeof is a built-in JavaScript operator.
+
+            It is used to check the data type of a value.
+        */
+
+        console.log(typeof age);
+        // Output: number
+
+        console.log(typeof Person_B_Age);
+        // Output: number
+
+
+        // IMPORTANT:
+        // Both integer and decimal values have the type "number"
+        // in JavaScript.
+
+
+        // =========================================================
+        // 2. STRING
+        // =========================================================
+
+        /*
+            String:
+            A string is a collection/sequence of characters.
+
+            Strings can be written using:
+            
+            1. Double quotes  " "
+            2. Single quotes  ' '
+            3. Backticks       ` `
+
+            Examples:
+                "Anushka"
+                'Hello'
+                `JavaScript`
+        */
+
+        let empRole = "AI Engineer";
+
+        console.log(empRole);
+
+
+        let empRole2 = 'DevOps Engineer';
+
+        console.log(empRole2);
+
+
+        // Checking data type
+
+        console.log(typeof empRole);
+        // Output: string
+
+        console.log(typeof empRole2);
+        // Output: string
+
+
+        // ---------------------------------------------------------
+        // Additional String Example
+        // ---------------------------------------------------------
+
+        let city = `Pune`;
+
+        console.log(city);
+        console.log(typeof city);
+
+
+        // =========================================================
+        // 3. BOOLEAN
+        // =========================================================
+
+        /*
+            Boolean has only TWO possible values:
+
+                true
+                false
+
+            Boolean is commonly used for:
+            - Decision making
+            - Conditions
+            - Comparisons
+            - Loops
+
+            Example:
+
+                Is a person eligible?
+                Yes → true
+                No  → false
+        */
+
+        let isEligible = false;
+
+        console.log(isEligible);
+
+        console.log(typeof isEligible);
+        // Output: boolean
+
+
+        // Example:
+
+        let isStudent = true;
+
+        console.log(isStudent);
+
+
+        // =========================================================
+        // 4. NULL
+        // =========================================================
+
+        /*
+            null means:
+
+            "There is intentionally no value."
+
+            It is generally used when we want to represent
+            an empty or unknown value intentionally.
+        */
+
+        let empId = null;
+
+        console.log(empId);
+        // Output: null
+
+
+        // ---------------------------------------------------------
+        // IMPORTANT:
+        // typeof null returns "object"
+        // ---------------------------------------------------------
+
+        console.log(typeof empId);
+        // Output: object
+
+
+        /*
+            This is a historical bug/quirk in JavaScript.
+
+            We expect:
+                typeof null → null
+
+            But JavaScript returns:
+                typeof null → object
+
+            This behavior has been kept for backward compatibility.
+        */
+
+
+        // =========================================================
+        // EMPTY STRING vs NULL
+        // =========================================================
+
+        /*
+            Empty string and null are NOT the same.
+
+            "" or " " → String
+            null      → No intentional value
+        */
+
+        let empCTC = "";
+
+        console.log(empCTC);
+        console.log(typeof empCTC);
+        // Output:
+        // ""
+        // string
+
+
+        // IMPORTANT:
+        // " " is NOT an empty string.
+        // It contains one space character.
+
+        let value = " ";
+
+        console.log(value);
+        console.log(typeof value);
+        // string
+
+
+        // =========================================================
+        // 5. UNDEFINED
+        // =========================================================
+
+        /*
+            undefined means a variable has been declared
+            but no value has been assigned to it yet.
+        */
+
+        let a;
+
+        console.log(a);
+        // Output: undefined
+
+        console.log(typeof a);
+        // Output: undefined
+
+
+        /*
+            Example:
+
+                let salary;
+
+            Here:
+                Variable → salary
+                Value    → undefined
+        */
+
+
+        // ---------------------------------------------------------
+        // undefined can also be assigned manually
+        // ---------------------------------------------------------
+
+        let b = undefined;
+
+        console.log(b);
+        // undefined
+
+
+        // =========================================================
+        // NULL vs UNDEFINED
+        // =========================================================
+
+        /*
+            null:
+                We intentionally assign "no value".
+
+                let x = null;
+
+            undefined:
+                A variable exists but no value is assigned.
+
+                let y;
+        */
+
+
+        // =========================================================
+        // 6. SYMBOL
+        // =========================================================
+
+        /*
+            Symbol is a primitive data type.
+
+            Symbol is mainly used to create UNIQUE values.
+
+            Even if two Symbols contain the same description,
+            they are still different values.
+        */
+
+        let no1 = "20";
+        let no2 = "20";
+
+        console.log(no1 == no2);
+        // Output: true
+
+
+        // Symbol creates unique values.
+
+        console.log(Symbol(no1) == Symbol(no2));
+        // Output: false
+
+
+        /*
+            Why false?
+
+            Symbol("20") creates a new unique Symbol.
+
+            Symbol("20") !== another Symbol("20")
+
+            The description may be the same,
+            but the Symbols themselves are different.
+        */
+
+
+        // Example:
+
+        let id1 = Symbol("id");
+        let id2 = Symbol("id");
+
+        console.log(id1 === id2);
+        // false
+
+
+        console.log(typeof id1);
+        // symbol
+
+
+        // =========================================================
+        // 7. BIGINT
+        // =========================================================
+
+        /*
+            BigInt is used to store VERY LARGE integer values
+            that cannot be safely represented by the normal
+            Number type.
+
+            BigInt values are created by adding 'n'
+            at the end of an integer.
+        */
+
+        let bigNumber = 123456789012345678901234567890n;
+
+        console.log(bigNumber);
+
+        console.log(typeof bigNumber);
+        // Output: bigint
+
+
+        /*
+            IMPORTANT:
+
+            BigInt and Number are different data types.
+
+            Example:
+
+                let a = 10;
+                let b = 10n;
+
+            a → number
+            b → bigint
+        */
+
+
+        // =========================================================
+        // SUMMARY OF PRIMITIVE DATA TYPES
+        // =========================================================
+
+        /*
+            Primitive Data Types:
+
+            1. Number
+            2. String
+            3. Boolean
+            4. Undefined
+            5. Null
+            6. Symbol
+            7. BigInt
+        */
+
+
+        // *********************************************************
+        //                NON-PRIMITIVE DATA TYPES
+        // *********************************************************
+
+
+        // =========================================================
+        // 1. ARRAY
+        // =========================================================
+
+        /*
+            Array:
+
+            An array is used to store multiple values
+            in a single variable.
+
+            Arrays are written using square brackets:
+
+                [ ]
+
+            Array indexing starts from 0.
+
+            Example:
+
+                let skills = ["HTML", "CSS", "JavaScript"];
+
+                Index:
+                HTML       → 0
+                CSS        → 1
+                JavaScript → 2
+        */
+
+
+        let skill = [
+            "React",
+            "NextJS",
+            "AWS",
+            "Data Science",
+            1234,
+            true,
+            null,
+            ["Pratik", "Prathmesh"]
+        ];
+
+
+        console.log(skill);
+
+
+        // Accessing array elements
+
+        console.log(skill[0]);
+        // React
+
+        console.log(skill[1]);
+        // NextJS
+
+        console.log(skill[4]);
+        // 1234
+
+
+        // Array length
+
+        console.log(skill.length);
+        // Gives the total number of elements
+
+
+        // ---------------------------------------------------------
+        // IMPORTANT:
+        // JavaScript arrays can contain DIFFERENT data types.
+        // ---------------------------------------------------------
+
+        /*
+            JavaScript arrays do NOT have to contain only
+            similar data types.
+
+            Example:
+
+                ["Hello", 123, true, null]
+
+            This is completely valid in JavaScript.
+        */
+
+
+        // ---------------------------------------------------------
+        // typeof ARRAY
+        // ---------------------------------------------------------
+
+        console.log(typeof skill);
+
+        // Output:
+        // object
+
+
+        /*
+            IMPORTANT:
+
+            typeof [] returns "object".
+
+            An array is technically a special type of object
+            in JavaScript.
+
+            To check whether something is specifically an array,
+            use:
+
+                Array.isArray()
+        */
+
+        console.log(Array.isArray(skill));
+        // true
+
+
+        // =========================================================
+        // 2. OBJECT
+        // =========================================================
+
+        /*
+            Object:
+
+            An object is used to store related information
+            in KEY : VALUE pairs.
+
+            Syntax:
+
+                {
+                    key: value
+                }
+
+            Example:
+
+                {
+                    name: "Pratik",
+                    age: 22
+                }
+
+            Here:
+                name → key
+                "Pratik" → value
+        */
+
+
+        // Individual variables
+
+        let intern_Stipend = "10K";
+        let intern_Name = "Motu";
+        let intern_Skill = "HTML";
+        let intern_Id = 12345;
+
+
+        // ---------------------------------------------------------
+        // Instead of creating many separate variables,
+        // we can store related information inside an object.
+        // ---------------------------------------------------------
+
+
+        let obj = {
+
+            intern_Name: "Pratik",
+
+            intern_Id: 12345,
+
+            intern_Skill: "Full Stack",
+
+            intern_Stipend: "10K",
+
+            isEligible: true
+
+        };
+
+
+        console.log(obj);
+
+
+        console.log(typeof obj);
+        // Output: object
+
+
+        // =========================================================
+        // ACCESSING OBJECT VALUES
+        // =========================================================
+
+        /*
+            We can access object values using:
+
+            1. Dot notation
+            2. Bracket notation
+        */
+
+
+        // Dot notation
+
+        console.log(obj.intern_Name);
+        // Pratik
+
+        console.log(obj.intern_Id);
+        // 12345
+
+
+        // Bracket notation
+
+        console.log(obj["intern_Skill"]);
+        // Full Stack
+
+
+        // =========================================================
+        // 3. FUNCTION
+        // =========================================================
+
+        /*
+            Function:
+
+            A function is a reusable block of code
+            designed to perform a particular task.
+        */
+
+
+        function greet() {
+
+            console.log("Hello Anushka");
+
+        }
+
+
+        // Calling the function
+
+        greet();
+
+
+        // Checking function type
+
+        console.log(typeof greet);
+        // Output: function
+
+
+        /*
+            IMPORTANT:
+
+            Although typeof function returns "function",
+            functions are technically objects in JavaScript.
+        */
+
+
+        // =========================================================
+        // FINAL SUMMARY
+        // =========================================================
+
+        /*
+        ============================================================
+                    JAVASCRIPT DATA TYPES
+        ============================================================
+
+        PRIMITIVE DATA TYPES
+        --------------------
+
+        1. Number
+           Example: 10, 20.5
+
+        2. String
+           Example: "Hello", 'JavaScript'
+
+        3. Boolean
+           Example: true, false
+
+        4. Undefined
+           Example: let x;
+
+        5. Null
+           Example: let x = null;
+
+        6. Symbol
+           Example: Symbol("id")
+
+        7. BigInt
+           Example: 12345678901234567890n
+
+
+        NON-PRIMITIVE / REFERENCE TYPES
+        --------------------------------
+
+        1. Object
+           Example:
+           { name: "Anushka", age: 22 }
+
+        2. Array
+           Example:
+           ["HTML", "CSS", "JS"]
+
+        3. Function
+           Example:
+           function greet() { }
+
+
+        ============================================================
+                         IMPORTANT POINTS
+        ============================================================
+
+        • JavaScript is dynamically typed.
+
+        • We don't need to specify the data type while declaring
+          a variable.
+
+        Example:
+
+            let x = 10;       // number
+            x = "Hello";      // string
+            x = true;         // boolean
+
+        • The same variable can hold different types of values
+          at different times.
+
+        • Use typeof to check the type of a value.
+
+        Example:
+
+            typeof 10          → "number"
+            typeof "Hello"     → "string"
+            typeof true        → "boolean"
+            typeof undefined   → "undefined"
+            typeof null        → "object"  ← JS quirk
+            typeof 10n         → "bigint"
+            typeof Symbol()    → "symbol"
+            typeof {}          → "object"
+            typeof []          → "object"
+            typeof function(){}→ "function"
+
+        • Arrays are special types of objects.
+
+        • Array.isArray() can be used to specifically check
+          whether a value is an array.
+
+        ============================================================
+        */
+
+    </script>
+
+</body>
+</html>

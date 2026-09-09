@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // looping statement:
+        // it execute the block of code repeatedly until the condition is false.
+
+        // do while loop
+        // for loop
+        // while loop
+
+
+        // *********************************************************************
+
+        // while loop :reserve keyword
+        // it is used to execute a block of code repeatedly as long as the condition is true
+
+        // syntax:
+
+        // while(condition)
+        // {
+        //     // block of code to be executed
+        // }
+
+
+
+        // EX 1:
+        // let a=10
+        // while(a<=10)
+        // {
+        //     console.log("welcome to MODERN javascript");
+        //     // MUST PASS STOPING CONDITION OTHERWISE IT WILL BE INFINITE LOOP
+        //     a++; // incrementing the value of a by 1
+
+        // }
+
+
+
+
+        // EX2:
+        // let b=30
+        // b++; 
+        // console.log(b++); // 31
+        // console.log(++b); // 33
+        // console.log(b); // 33
+
+
+        // // ex3
+        // let c=1
+        // while(c<=100)
+        // {
+        //     console.log(c);
+        //     c++;
+        // }
+
+
+        // ex4:even no.
+        // let x=1
+        // while(x<=50)
+        // {
+        //     if(x%2==0)
+        //     {
+        //         console.log(x);
+
+        //     }
+        //     // console.log(x);
+        //     x++;
+
+        // }
+
+
+        // **************************************************************
+
+        // do while loop : reserve keyword
+        // it is used to execute a block of code repeatedly as long as the condition is true
+
+
+        // example:
+        // let y=1
+        // do{
+        //     console.log(y);
+        //     y++;
+        // }while(y<=10)
+
+
+        // // ex2:table from 2 to 20
+        // let a=1
+        // do{
+        //     console.log("I="+a);
+        //     console.log("*************************")
+
+        //     let j=1;
+        //     do{
+        //         console.log("J=" +a*j)
+        //         j++;
+        //     }while(j<=10)
+        //     a++;
+
+        // }while(a<=15);
+
+
+        // ex:sum of 1 to 10
+        let a = 1
+        let sum = 0
+        do {
+            console.log("No=" + a);
+            sum += a;
+            a++;
+        } while (a <= 10)
+        console.log("Sum=" + sum)
+
+
+
+        // ex:factorial of 2 to 4
+        let b = 2;
+
+        do {
+            let fact = 1;
+            let i = 1;
+
+            do {
+                fact *= i;
+                i++;
+            } while (i <= b);
+
+            console.log("Factorial of " + b + " = " + fact);
+
+            b++;
+        } while (b <= 4);
+
+
+
+
+
+
+    </script>
+</body>
+
+</body>
+
+</html>

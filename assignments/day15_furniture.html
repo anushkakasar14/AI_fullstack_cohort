@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Atelier Studio</title>
+    <link rel="shortcut icon" href="../assets/atelier_favicon.svg" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /************************************************************************************************/
+        /*NAVBAR STARTS HERE*/
+        .navbar {
+            height: 80px;
+            width: 100%;
+            background-color: white;
+            float: left;
+            position: fixed;
+        }
+
+        .nav_1 {
+            height: 100%;
+            width: 30%;
+            float: left;
+            /*background-color: aqua; */
+        }
+
+
+        .nav_2 {
+            height: 100%;
+            width: 40%;
+            float: left;
+            /* background-color: rgb(169, 97, 221);*/
+            padding-top: 35px;
+            padding-left: 20px;
+        }
+
+        .nav_2 ul li {
+
+            margin-left: 25px;
+            display: inline;
+        }
+
+        .nav_2 li a {
+            text-decoration: none;
+            color: black;
+            font-family: "DM Sans", system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+
+        }
+
+        .nav_3 {
+            height: 100%;
+            width: 30%;
+            float: left;
+            /* background-color: rgb(228, 232, 105);*/
+            padding-top: 25px;
+            padding-left: 50px;
+        }
+
+        .nav_3 .btn1 {
+            height: 40px;
+            width: 180px;
+            background-color: #8C6124;
+            color: white;
+            border-radius: 30px;
+            border: none;
+
+
+        }
+
+        /*NAVBAR ENDS HERE*/
+        /*****************************************************************************************/
+        /* MAIN SECTION STARTS HERE*/
+        .section {
+            height: 600px;
+            width: 100%;
+            background-color: cornflowerblue;
+            float: left;
+        }
+
+        .section .section_bg {
+            height: 100%;
+            width: 100%;
+            background: url(../assets/atelier_bg.jpeg) no-repeat center center/cover;
+        }
+
+        .section_bg .section_effects {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(162, 160, 160, 0.3);
+            padding-top: 100px;
+        }
+
+        .section_effects .section_text {
+            height: 300px;
+            width: 80%;
+            /*background-color: aqua;*/
+            float: left;
+            padding-left: 100px;
+        }
+
+        .section_effects .section_btn {
+            height: 180px;
+            width: 80%;
+            /*  background-color: crimson;*/
+            float: left;
+            padding-left: 100px;
+
+        }
+
+        /*MAIN SECTION ENDS HERE*/
+        /*****************************************************************************************/
+        /*SECTION 2 STARTS*/
+        .section2 {
+            height: 900px;
+            width: 100%;
+           /* background-color: deeppink;*/
+            float: left;
+        }
+
+        .section2 .section2_heading {
+            height: 220px;
+            width: 100%;
+            float: left;
+            /* background-color: forestgreen;*/
+        }
+
+        /*********************************************/
+        .section2 .section2_body {
+            height: 680px;
+            width: 100%;
+           /* background-color: darksalmon;*/
+            float: left;
+        }
+
+        .section2_body .body1 {
+            height: 25%;
+            width: 100%;
+            /*  background-color: darkred;*/
+            float: left;
+
+        }
+
+        .body1 .body1_1 {
+            height: 100%;
+            width: 50%;
+            /*  background-color: aqua;*/
+            float: left;
+            padding-top: 20px;
+            padding-left: 350px;
+
+        }
+
+        .body1_1 .no1 {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background-color: #8C6124;
+        }
+
+
+
+        .body1 h2 {
+            margin-top: 10px;
+            margin-left: 650px;
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            color: rgb(17, 24, 39);
+        }
+
+        .body1 p {
+            margin-left: 650px;
+            font-family: "DM Sans", system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(75, 85, 99);
+
+
+        }
+
+        /**************************************************************************/
+        .section2_body .body2 {
+            height: 25%;
+            width: 100%;
+           /* background-color: rgb(201, 219, 153);*/
+            float: left;
+        }
+
+        .body2 .body2_1 {
+            height: 100%;
+            width: 50%;
+           /* background-color: aqua;*/
+            float: left;
+        }
+
+        .body2_1 h2 {
+            margin-top: 10px;
+            margin-left: 150px;
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            color: rgb(17, 24, 39);
+        }
+
+        .body2_1 p {
+            margin-left: 150px;
+            font-family: "DM Sans", system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(75, 85, 99);
+
+
+        }
+
+        .body2 .body2_2 {
+            height: 100%;
+            width: 50%;
+           /* background-color: rgb(103, 37, 225);*/
+            float: left;
+
+        }
+
+        .body2_2 .no2 {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-left: 150px;
+            margin-top: 50px;
+            background-color: #8C6124;
+        }
+
+
+
+        /*************************************************************************************************/
+        .section2_body .body3 {
+            height: 25%;
+            width: 100%;
+            /*background-color: rgb(130, 239, 224);*/
+            float: left;
+        }
+
+        .body3 .body3_1 {
+            height: 100%;
+            width: 50%;
+           /* background-color: blue;*/
+            float: left;
+        }
+
+        .body3_1 .no3 {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background-color: #8C6124;
+            margin-top: 30px;
+            margin-left: 330px;
+        }
+
+        .body3 .body3_2 {
+            height: 100%;
+            width: 50%;
+           /* background-color: rgb(198, 107, 70);*/
+            float: left;
+        }
+
+        
+        .body3_2 {
+            padding-left: 70px;
+            padding-top: 20px;
+        }
+
+        .body3_2 h2 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            color: rgb(17, 24, 39);
+        }
+
+        .body3_2 p {
+            font-family: "DM Sans", system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(75, 85, 99);
+        }
+
+
+        /****************************************************************************/
+        .section2_body .body4 {
+            height: 25%;
+            width: 100%;
+           /* background-color: rgb(204, 122, 168);*/
+            float: left;
+        }
+        .body4 .body4_1 {
+            height: 100%;
+            width: 50%;
+           /* background-color: aqua;*/
+            float: left;
+        }
+
+        .body4_1 h2 {
+            margin-top: 10px;
+            margin-left: 150px;
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            color: rgb(17, 24, 39);
+        }
+
+        .body4_1 p {
+            margin-left: 150px;
+            font-family: "DM Sans", system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(75, 85, 99);
+
+
+        }
+
+        .body4 .body4_2 {
+            height: 100%;
+            width: 50%;
+          /*  background-color: rgb(103, 37, 225);*/
+            float: left;
+
+        }
+
+        .body4_2 .no4 {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-left: 150px;
+            margin-top: 50px;
+            background-color: #8C6124;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- NAVBAR STARTS -->
+        <nav>
+            <div class="navbar">
+                <div class="nav_1">
+                    <img src="../assets/atelier_logo.svg"
+                        style="height: 60%;margin-left:100px;margin-top:20px;width:60%;" alt="">
+                </div>
+                <div class="nav_2">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Portfolio</a></li>
+                        <li><a href="">Prices</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Blog</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="nav_3">
+                    <button class="btn1">Book Consultation</button>
+                </div>
+            </div>
+        </nav>
+        <!-- NAVBAR ENDS HERE -->
+        <!-- ************************************************************************************************************** -->
+
+        <!--  MAIN SECTION STARTS HERE -->
+        <section class="section">
+            <div class="section_bg">
+                <div class="section_effects">
+                    <div class="section_text">
+                        <h1
+                            style="font-family:Playfair Display, Georgia,Times New Roman, serif;font-size: 60px;font-weight: 700;line-height: 75px;color: rgb(255, 255, 255);">
+                            Transforming Spaces Into <br>Extraordinary Experiences</h1>
+                        <p
+                            style="font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;line-height: 24px;color:oklab(0.999994 0.0000455677 0.0000200868 / 0.8);">
+                            Award-winning interior design studio crafting timeless,<br> sophisticated environments for
+                            discerning clients across <br> residential, commercial, and hospitality sectors.</p>
+                    </div>
+                    <div class="section_btn">
+                        <button
+                            style="height: 35px;width:125px;border-radius:20px;background-color:white;border:none;font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;">Residential</button>
+                        <button
+                            style="height: 35px;width:125px;border-radius:20px;background-color:transparent;color:white;border: white 1px solid;font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;">Commercial</button>
+                        <button
+                            style="height: 35px;width:125px;border-radius:20px;background-color:transparent;color:white;border:white 1px solid;font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;">Hospitality</button>
+                        <button
+                            style="height: 35px;width:125px;border-radius:20px;background-color:transparent;color:white;border:white 1px solid;font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;">Retail</button>
+                        <br>
+                        <br>
+                        <button
+                            style="height: 40px;width:155px;border-radius:20px;background-color:#8C6124;border:none;font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;">view
+                            portfolio</button>
+                        <button
+                            style="height: 40px;width:155px;border-radius:20px;background-color:transparent;color:white;border:white 1px solid;font-family:DM Sans, system-ui, sans-serif;font-size: 16px;font-weight: 400;">Book
+                            Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MAIN SECTION ENDS HERE -->
+        <!-- ****************************************************************************************** -->
+        <!-- section2 starts here -->
+        <section class="section2">
+            <div class="section2_heading">
+                <button
+                    style="height: 30px;width:100px;background-color:rgb(225, 202, 206);border:none;border-radius:20px;color:brown;margin-top:30px;margin-left:540px">Our
+                    Process</button>
+                <h1
+                    style="font-family:Playfair Display, Georgia, Times New Roman, serif;font-size: 48px;font-weight: 700;line-height: 48px;color: rgb(17, 24, 39);margin-left:420px;margin-top:20px;">
+                    How We Work</h1>
+                <p
+                    style="font-family: DM Sans, system-ui, sans-serif;font-size: 18px;font-weight: 400;line-height: 28px;color: rgb(75, 85, 99);margin-left:50px;margin-top:20px; text-align:center">
+                    A collaborative four-step journey from initial vision to final reveal, ensuring <br> every detail
+                    reflects your unique story.</p>
+            </div>
+            <div class="section2_body">
+                <div class="body1">
+                    <div class="body1_1">
+                        <div class="no1">
+                            <h1 style="margin-left:18px;padding-top:13px;color:white;">01</h1>
+                        </div>
+
+                    </div>
+
+                    <h2>Consult</h2>
+                    <p>We begin with an in-depth conversation to <br>understand your vision, lifestyle, and goals. This
+                        <br>
+                        discovery phase shapes every decision that follows.
+                    </p>
+
+
+
+                </div>
+                <div class="body2">
+                    <div class="body2_1">
+                        <h2>Design</h2>
+                        <p>Our team develops detailed concept boards, floor <br> plans, 3D renderings, and material
+                            palettes
+                            that <br>
+                            bring your vision to life before any work begins.</p>
+                    </div>
+
+                    <div class="body2_2">
+                        <div class="no2">
+                            <h1 style="margin-left:15px;padding-top:18px;color:white;">02</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="body3">
+
+                    <div class="body3_1">
+                        <div class="no3">
+                            <h1 style="margin-left:18px;padding-top:13px;color:white;">03</h1>
+                        </div>
+                    </div>
+
+                    <div class="body3_2">
+                        <h2>Refine</h2>
+                        <p>Through iterative reviews and collaborative <br>
+                            feedback sessions, we fine-tune every element <br>
+                            until the design perfectly captures your aesthetic</p>
+                    </div>
+                </div>
+                <div class="body4">
+                    <div class="body4_1">
+                        <h2>Design</h2>
+                        <p>Our team develops detailed concept boards, floor <br> plans, 3D renderings, and material
+                            palettes
+                            that <br>
+                            bring your vision to life before any work begins.</p>
+                    </div>
+
+                    <div class="body4_2">
+                        <div class="no4">
+                            <h1 style="margin-left:15px;padding-top:18px;color:white;">04</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

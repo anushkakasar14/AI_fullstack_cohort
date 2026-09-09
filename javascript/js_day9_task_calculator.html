@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let no1 = +prompt("Enter No1")
+        let operator=prompt("Enter operator(+,-,*,/):");
+        let no2 = +prompt("Enter No2")
+
+        let output;
+        switch(operator){
+            // addition case
+            case"+":
+            output=no1+no2;
+            break;
+
+            // substraction case
+            case"-":
+            output=no1-no2;
+            break;
+
+            // multiplication case
+            case"*":
+            output=no1*no2;
+            break;
+
+            // division case
+            case"/":
+            output=no1/no2;
+            break;
+
+            // default case 
+            default:
+            output="invalid operator"
+
+        }
+
+        // output posibilities
+
+        console.log("Result:"+output);
+        document.write("Result:"+output);
+    </script>
+</body>
+</html>

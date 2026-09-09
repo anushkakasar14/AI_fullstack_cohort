@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>var Keyword in JavaScript</title>
+</head>
+
+<body>
+
+    <h1>var Keyword in JavaScript</h1>
+    <hr>
+
+
+    <!-- ========================================================= -->
+    <!--                     VAR KEYWORD                           -->
+    <!-- ========================================================= -->
+
+    <!--
+        var is a keyword used to declare variables in JavaScript.
+
+        var was introduced in the early versions of JavaScript
+        and was commonly used before ES6.
+
+        ES6 (2015) introduced:
+            let
+            const
+
+        Example:
+
+            var name = "Anushka";
+    -->
+
+
+    <script>
+
+
+        // =========================================================
+        // 1. DECLARE A VARIABLE
+        // =========================================================
+
+        /*
+            We can declare a variable using the 'var' keyword.
+
+            Syntax:
+
+                var variableName;
+        */
+
+        var name;
+
+        console.log(name);
+        // Output: undefined
+
+
+        /*
+            A variable can be declared without assigning
+            any value.
+
+            By default, its value will be undefined.
+        */
+
+
+        // =========================================================
+        // 2. DECLARE AND INITIALIZE
+        // =========================================================
+
+        /*
+            We can declare a variable and assign a value
+            at the same time.
+
+            Declaration:
+                var age;
+
+            Initialization:
+                age = 22;
+
+            Declaration + Initialization:
+                var age = 22;
+        */
+
+        var age = 22;
+
+        console.log(age);
+        // Output: 22
+
+
+        // =========================================================
+        // 3. REDECLARE A VARIABLE
+        // =========================================================
+
+        /*
+            With var, we can redeclare a variable
+            using the same variable name.
+
+            Example:
+        */
+
+        var city = "Pune";
+
+        var city = "Mumbai";
+
+        console.log(city);
+        // Output: Mumbai
+
+
+        /*
+            No error is generated when the same variable
+            is declared again using var.
+
+            The latest assigned value will be stored.
+        */
+
+
+        // =========================================================
+        // 4. UPDATE A VARIABLE
+        // =========================================================
+
+        /*
+            We can change/update the value of a var variable.
+
+            Example:
+        */
+
+        var salary = 25000;
+
+        console.log(salary);
+        // Output: 25000
+
+        salary = 30000;
+
+        console.log(salary);
+        // Output: 30000
+
+
+        /*
+            Here:
+
+            First value  → 25000
+            Updated value → 30000
+
+            We don't need to write 'var' again while updating.
+        */
+
+
+        // =========================================================
+        // 5. REDECLARE + UPDATE
+        // =========================================================
+
+        var company = "Google";
+
+        var company = "Microsoft";
+
+        company = "Amazon";
+
+        console.log(company);
+        // Output: Amazon
+
+
+        /*
+            var allows both:
+
+            ✔ Redeclaration
+            ✔ Reassignment / Updating
+        */
+
+
+        // =========================================================
+        // 6. SCOPE OF VAR
+        // =========================================================
+
+        /*
+            var is FUNCTION SCOPED.
+
+            This means a var variable is available throughout
+            the function in which it is declared.
+
+            It is NOT block scoped.
+        */
+
+
+        function employeeDetails() {
+
+            var employeeName = "Anushka";
+
+            console.log(employeeName);
+
+        }
+
+        employeeDetails();
+
+
+        /*
+            employeeName can be accessed inside the function.
+
+            But it cannot be accessed outside the function.
+        */
+
+        // console.log(employeeName);
+        // ❌ Error: employeeName is not defined
+
+
+        // =========================================================
+        // 7. VAR INSIDE A BLOCK
+        // =========================================================
+
+        /*
+            A block is created using:
+
+                { }
+
+            Examples:
+                if
+                for
+                while
+                standalone { }
+        */
+
+        if (true) {
+
+            var course = "JavaScript";
+
+        }
+
+        console.log(course);
+        // Output: JavaScript
+
+
+        /*
+            IMPORTANT:
+
+            var does NOT have block scope.
+
+            Even though 'course' was declared inside the
+            if block, it can be accessed outside the block.
+
+            This is one major difference between var and let/const.
+        */
+
+
+        // =========================================================
+        // 8. VAR HOISTING
+        // =========================================================
+
+        /*
+            var variables are hoisted.
+
+            Hoisting means JavaScript moves the variable
+            declaration to the top of its scope during execution.
+
+            Example:
+        */
+
+        console.log(student);
+
+        var student = "Anushka";
+
+
+        /*
+            Output:
+
+                undefined
+
+            JavaScript behaves approximately like:
+
+                var student;
+
+                console.log(student);
+
+                student = "Anushka";
+        */
+
+
+        // =========================================================
+        // 9. VAR WITHOUT INITIALIZATION
+        // =========================================================
+
+        /*
+            We can declare a variable without assigning a value.
+        */
+
+        var marks;
+
+        console.log(marks);
+        // undefined
+
+        marks = 85;
+
+        console.log(marks);
+        // 85
+
+
+        // =========================================================
+        //                 IMPORTANT SUMMARY
+        // =========================================================
+
+        /*
+        ============================================================
+                        VAR KEYWORD
+        ============================================================
+
+        var is used to declare variables in JavaScript.
+
+        ✔ Can declare without initialization
+
+            var age;
+
+
+        ✔ Can declare and initialize
+
+            var age = 22;
+
+
+        ✔ Can redeclare
+
+            var age = 22;
+            var age = 25;
+
+
+        ✔ Can update/reassign
+
+            var age = 22;
+            age = 25;
+
+
+        ✔ Function scoped
+
+            var is available throughout the function.
+
+
+        ✔ NOT block scoped
+
+            if (true) {
+                var x = 10;
+            }
+
+            console.log(x);  // 10
+
+
+        ✔ Supports hoisting
+
+            console.log(x);
+            var x = 10;
+
+            Output:
+            undefined
+
+
+        ============================================================
+        */
+
+    </script>
+
+</body>
+
+</html>

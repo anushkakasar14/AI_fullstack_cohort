@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // OPERATORS IN MODERN JS:Use to perform operation.
+
+        
+        // 1.Unary: ++,--
+
+
+        // 2.Binary: 
+
+        // expression=operand+operator
+        // operand- actual variable
+        // operator-  -,+,*
+
+
+        // Types of operators:
+
+                //1.Arithmetic(+,-,*,/,%)
+                let a=20;
+                let b=5;
+
+                console.log(a+b); //25
+                console.log(a-b); //15
+
+                console.log(a*b); //100
+                console.log(a/b); //4 (division:quotiont)
+                console.log(a%b); //0  (modules: remainder)
+
+
+                // BODMAS rule:
+
+                // Bracket
+                // Order- ^,*
+                // Division
+                // Multiplication
+                // Addition
+                // Substraction
+
+
+
+                console.log(a+b*a); //120
+                console.log(a-b%a); //20
+                console.log(a*b-a); //80
+
+                // ***************************************
+
+                // 2.Assignment( =,-=,/=,+=)
+                // LSV=RSV
+                // ex:1
+                let A=100;
+                console.log(A) //100
+
+
+                // ex:2
+                let x=10;
+                let y=x;
+                console.log(x); //10
+                console.log(y); //10
+
+                // ex:3
+                let p=20;
+                let q=30;
+                console.log(p+=q);  //p=p+q=50
+                console.log(p*=q);  //p=p*q= 50*30=1500
+                console.log(p/=q);  //1500/30=50
+
+                // ****************************************
+                // 3.Logical (&&,||,!)
+                // to perform logical operations
+                // to check 2 or more conditions
+
+
+
+                // true-1
+                // false-0
+
+
+                //logical && -all conditions must be true
+                // 1 && 1=1
+                // 1 && 0=0
+                // 0 && 0=0
+                // 0 && 1=0
+
+                // logical ||-any 1 consition should be true
+                // 1||1=1
+                // 1||0=1
+                // 0||0=0
+                // 0||1=1
+
+                console.log(true && false) //false 0
+                console.log(true&& true) //true
+                console.log(18>30 && 20<100)//false
+
+
+                let age=30;
+                console.log(age>20 && age<40)//true
+                console.log(age>20 || age<40)//true
+                console.log(18>30 || 20<100)//true
+
+
+
+                // logical !
+                // it works reverse
+                // it return true if conditions becomes false
+                // it return false if conditions becomes true
+                console.log(!true)//false
+                console.log(10>100)//false
+                console.log(!10>100)//false
+                console.log(!(10>100))//true
+
+
+
+                // 4.Comparison (<,>,<=,>=,!=)
+                // use to compare 2 values
+                console.log(10<20)
+                console.log(100<50)
+                console.log(10>100)
+                console.log(10>=100)
+                console.log(10<=100)
+                console.log(20!=20)
+                console.log(20!=120);
+
+
+
+                // 5.Equality(==,===)
+                // == (compare value)
+                // === (compare value & data type)
+
+                // let stud1="sumit";
+                // let stud2="rahul";
+                // console.log(stud1=stud2);  //rahul
+
+
+                console.log(20==20);//true
+                console.log(20==100);//false
+
+
+                console.log(100===100)//true
+                console.log(20==="20"); //false
+
+                // 6.Bitwise(<<,>>>,<<<,&,^,|)
+
+                // decimal to binary
+                 console.log(5&1) //0101 & 0001
+
+                // 5-0101
+                // 8 4 2 1
+                // 0 1 0 1 
+                
+                // 1-0001
+
+
+                // 5-0 1 0 1
+                // 1-0 0 0 1
+            // ---------------
+            //       0 0 0 1  -1
+
+
+        // Modern JS Operator:
+                // 1.ternary op
+                // 2.typeof op
+                // 3.exponential op
+                // 4.concatenation op
+                // 5.nullish coalsching op
+      </script>
+</body>
+</html>

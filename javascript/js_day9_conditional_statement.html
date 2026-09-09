@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Condition Statements</h1>
+    <hr>
+
+    <script>
+
+        // if()- useto check one condition at a time
+        // synatx:
+
+        // if(condition)
+        // {
+        //         //block of code
+        // }
+
+        // ex:
+        // if(true)
+        // {
+        //     console.log("hello world")
+        // }
+
+
+
+        // let str="full stack engineer";
+        // if(str)
+        // {
+        // console.log("welcome" +str);
+        // console.log(`welcome ${str}`);  // used string literals
+        // }
+
+
+        // ex2
+        // let age=prompt("enter your age");
+        // if (age>=18){
+        //     alert("congrats....")
+        // }
+        // if (age<18)
+        // {
+        //     alert("sorry..")
+        // }
+
+
+        // ex3
+
+
+
+
+        // take shop_amt as input from user
+        // shop_amt>30000
+        // disc=50%
+
+
+        // let shop_amt=+prompt("enter your shopping amt:")
+        // let disc=0;
+        // if(shop_amt>=30000)
+        // {
+        //     disc=50;
+        //     let disc_Amt=shop_amt*disc / 100
+            
+        // }
+        // if(shop_amt<30000)
+        // {
+        //     alert("no discount")
+        // }
+        
+
+        // *********************************************************
+        // if else-use to check 2 conditions at a same time
+        // syntax
+        // if(condition){
+        //     // true condition
+        // }
+        // else{
+        //     // false condition
+        // }
+
+
+
+        // let no1=+prompt("enter no1")
+        // let no2=+promt("enter no2")
+        // let op=+prompt("what operation to perform- add/mul");
+        // if(op=="add")
+        // {
+        //     alert(" add is (no1+no2)")
+        // }
+        // else{
+        //     alert("mul is (no1*no2)")
+        // }
+
+
+
+
+// ******************************************************************************
+        // if elseif else
+        // use to check 2 or more condition
+
+        // syntax:
+    //     if(condition)
+    // {
+
+    // }
+    // else if(conditon){
+
+    // }
+    // else if(conditon){
+
+    // }
+    // else{
+
+    // }
+
+
+
+
+
+    // shop_amt>=20000
+    // disc=20%
+    // shop_amt>=30000
+    // disc=30%
+    // shop_amt>=50000
+    // disc=40%
+    
+
+    // else
+    // disc=0
+    
+let shop_amt = +prompt("Enter your shopping amount");
+
+let disc = 0;
+
+if (shop_amt >= 50000) {
+    disc = 40;
+} 
+else if (shop_amt >= 30000) {
+    disc = 30;
+} 
+else if (shop_amt >= 20000) {
+    disc = 20;
+} 
+else {
+    disc = 0;
+}
+
+let disc_Amt = shop_amt * disc / 100;
+let final_Amt = shop_amt - disc_Amt;
+
+ if (disc > 0) {
+     alert("Discount = " + disc + "%\n" +
+           "Discount Amount = ₹" + disc_Amt + "\n" +
+           "Final Amount = ₹" + final_Amt);
+ } 
+else {
+    alert("No discount applied");
+}
+
+
+
+    //  let shop_amt=+prompt("Enter your shopping amt")
+    //  let disc=0;
+    // if(shop_amt>=20000 && shop_amt<30000);
+    // {
+    //         disc=20;
+    //         
+            
+    // }
+    // elseif(shop_amt>=30000 && shop_amt<50000);
+    // {
+    //         disc=30;
+    //        
+
+    // }
+    // elseif(shop_amt>=50000);
+    // {
+    //         disc=40;
+    // }
+    // else
+    // {
+    //     alert("no discont applied")
+    // }
+    // let disc_Amt=shop_amt*disc/100
+    document.write
+    //    alert("your total amount is"+(disc_Amt));
+
+
+// *************************************************************************
+// SWITCH STATEMENT:-
+// use to handel multiple cases at a same time
+// used to multiple operation at a same time
+// best alternative for if else if else if
+
+// syntax:
+// switch(data)
+//{
+   // case1:
+    // block of code
+    //case2:
+    // block of code
+    //case3:
+    // block of code
+    //case4:
+    // block of code
+    // default()
+//}
+    </script>
+</body>
+</html>

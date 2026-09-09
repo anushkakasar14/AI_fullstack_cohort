@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines the character encoding used by the webpage -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed on the browser tab -->
+    <title>JavaScript Output Methods</title>
+</head>
+
+<body>
+
+    <!-- Main heading displayed on the webpage -->
+    <h1>Output Possibilities In JavaScript</h1>
+
+    <!-- Horizontal line used to separate content -->
+    <hr>
+
+    <!-- 
+        The <pre> tag displays text exactly as written,
+        including spaces and line breaks.
+    -->
+    <pre>
+        alert()          - Displays output in a popup/modal box.
+
+        console.log()    - Displays output in the browser's Developer Console.
+
+        document.write() - Writes content directly onto the webpage.
+    </pre>
+
+
+    <!-- JavaScript code starts here -->
+    <script>
+
+        // ============================================================
+        //              OUTPUT POSSIBILITIES IN JAVASCRIPT
+        // ============================================================
+
+
+        // ------------------------------------------------------------
+        // 1. alert()
+        // ------------------------------------------------------------
+
+        /*
+            alert() is a built-in JavaScript function.
+
+            It displays a message inside a popup box.
+
+            When the alert box appears, the user must click "OK"
+            before interacting with the webpage.
+
+            alert() is mainly useful for:
+            - Learning JavaScript
+            - Testing simple messages
+            - Showing important notifications
+
+            Example:
+        */
+
+        alert("Hello! Welcome to JavaScript");
+
+
+        // ============================================================
+        // 2. document.write()
+        // ============================================================
+
+        /*
+            document.write() is used to write or display content
+            directly on the HTML webpage.
+
+            The text written inside the quotation marks will be
+            displayed in the browser window.
+        */
+
+        document.write("Hello! Welcome to ES6");
+
+
+        /*
+            We can also write HTML tags inside document.write().
+
+            Here, <h1> is an HTML tag written as a string.
+
+            The browser reads the HTML code and displays it
+            as an actual HTML heading.
+
+            JavaScript is only writing the HTML code here.
+            The <h1> tag itself is interpreted by the browser as HTML.
+        */
+
+        document.write("<h1>Hello! Welcome to ES6</h1>");
+
+        document.write("<div style='height:200px;width:200px; background-color:blue;'></div>")
+
+        document.write("<img src='../assets/4.webp'>")
+
+
+        /*
+            Important Note:
+
+            document.write() is mainly used for learning and simple examples.
+
+            In modern JavaScript development, it is generally avoided.
+
+            If document.write() is executed after the webpage has
+            completely loaded, it can remove or replace the existing
+            content of the webpage.
+        */
+
+
+        // ============================================================
+        // 3. console.log()
+        // ============================================================
+
+        /*
+            console.log() is used to display information in the
+            browser's Developer Tools Console.
+
+            The output will NOT be displayed directly on the webpage.
+
+            It is mainly used by developers for:
+            - Testing code
+            - Checking variable values
+            - Debugging errors
+            - Understanding how the program is working
+
+            To see the output:
+
+            1. Open the webpage in the browser.
+            2. Right-click on the page.
+            3. Select "Inspect".
+            4. Open the "Console" tab.
+        */
+
+        console.log("Hello, this is Anushka");
+
+
+        // ============================================================
+        // 4. console.warn()
+        // ============================================================
+
+        /*
+            console.warn() is used to display a warning message
+            in the browser's Developer Console.
+
+            It helps developers identify something that may cause
+            a problem but is not necessarily an actual error.
+
+            Example:
+        */
+
+        console.warn("Hello! This is a warning message");
+
+
+        // ============================================================
+        // 5. console.error()
+        // ============================================================
+
+        /*
+            console.error() is used to display an error message
+            in the browser's Developer Console.
+
+            It is useful while debugging JavaScript programs.
+
+            Developers can use it to identify and understand
+            problems or errors in their code.
+        */
+
+        console.error("Hello! This is an error message");
+
+
+        // ============================================================
+        // 6. console.dir()
+        // ============================================================
+
+        /*
+            console.dir() is used to display detailed information
+            about a JavaScript object or value.
+
+            It is especially useful when working with:
+
+            - JavaScript objects
+            - HTML elements
+            - DOM elements
+
+            It displays the properties and methods that belong
+            to an object.
+
+            Example:
+        */
+
+        console.dir("Hello! This is console.dir()");
+
+
+       
+    </script>
+
+</body>
+
+</html>
