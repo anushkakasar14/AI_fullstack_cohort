@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="withdraw()">Withdraw</button>
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="checkBalance()">Check Balance</button>
+
+    <br><br>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+
+    <h3>Balance:</h3>
+    <p id="balance">50000</p>
+
+
+    <script>
+        let balance = 50000;
+
+        function withdraw() {
+
+            let amount = Number(document.getElementById("amount").value);
+
+            if (amount <= balance) {
+                balance = balance - amount;
+                document.getElementById("balance").innerText = balance;
+            }
+            else {
+                alert("Insufficient Balance");
+            }
+        }
+
+
+        function deposit() {
+
+            let amount = Number(document.getElementById("amount").value);
+
+            balance = balance + amount;
+
+            document.getElementById("balance").innerText = balance;
+        }
+
+
+        function checkBalance() {
+
+            document.getElementById("balance").innerText = balance;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            background-color:red;
+        }
+    </style>
+</head>
+<body id="body" onkeypress="demo1()" onkeydown="demo2()" onkeyup="demo3()">
+    <!-- keyboard events -->
+    <!-- works on keyborad -->
+    <!-- onkeydown-when we press down  a key -->
+    <!-- onkeyup-when we release a key -->
+    <!-- onkeypress-when we press a key -->
+
+    
+    <script>
+        const demo1 = () => {
+            document.getElementById("body").style.backgroundColor = "green";
+        }
+        const demo2 = () => {
+            document.getElementById("body").style.backgroundColor = "blue";
+        }
+        const demo3 = () => {
+            document.getElementById("body").style.backgroundColor = "red";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // slice:
+        // use to extract some part of Array
+        // original Array is not modified-NO
+        // Returns a new array containing the selected elements.
+        // -ve index can also work here
+        // syntax:slice(start,end(last element ignored))
+
+
+        // const activeUsers=["Aarav","Anushka","Rohit","Sneha","om"]
+        // console.log(activeUsers)
+
+        // let res=activeUsers.slice(0,2)
+        // console.log(res) //it ignores last element 
+
+        // console.log(activeUsers.slice(-3,-1));//here negative index can work
+
+
+        // *************************************************************************
+        // find index of an element
+        // indexOf: return starting index of element
+        const courses=["js","react","python","nodejs","java","aiml","genai"]
+        console.log(courses.indexOf("js"));
+
+// ****************
+        // lastIndexOf:returns last index of an element
+        console.log(courses.lastIndexOf("java"));
+
+// *********************
+        // include:check element is present or not
+        // true or false
+        console.log(courses.includes("genai"))
+
+
+// ******************
+        // at
+        console.log(courses.at(2))
+
+
+// **********************
+        // concat:used to merge 2 or more array
+
+        const arr1=[100,200,300,400]
+        const arr2=["anushka","arav","sneha"];
+        console.log(arr1+arr2)
+        console.log(`${arr1+arr2}`)
+
+        let newArray=arr2.concat(arr1)
+        console.log(newArray)
+
+
+        console.log(arr2)
+
+
+        // ***********************************************************************
+        // use to convert  array into string
+        // join
+        // toString
+        
+        
+        // toString
+        const orderStatus=["pending","processing","delivered","shipped","cancelled"]
+        console.log(orderStatus.toString())  //array to string
+
+
+        //join 
+        // we can add seperator here
+        // , % $ #
+        console.log(orderStatus.join("#"))
+
+
+
+        // *********************************************************
+        // sort:
+        // used to sort array in ascending or decending order
+        const arr4=["x","y","p","a","r","e","z"]
+        console.log(arr4.sort())
+
+        const no=[300,50,100,3,500,400,80000,6000,0.4]
+        console.log(no.sort()) 
+
+        // compare function :sort in ascending or descending order of number
+        console.log(no.sort((a,b)=>{return a-b}))
+
+
+
+        // const mix=["A" ,"X","R","S",1000,200,400,500,"z"]
+        
+        // // console.log(mix.sort((a,b)=>{return a-b}))
+        // const result=mix.sort(a,b) =>{
+        //     if(typeof a==='number'&& typeof b==='number'){
+        //         return a-b;
+        //     }
+        //     if (typeof a==='string' && typeof b==='string'){
+        //         return a.localCompare(b)
+
+        //     }return -1
+
+        // }
+
+
+        // reverse
+        const arr6=[1000,200,500,600,700,240]
+        console.log(arr6.reverse())
+
+
+
+        // **************************************************************
+        // ES6 methods:
+
+        // filter
+        // find
+        // some
+        // every
+        // reduce
+        // forEach
+        // map
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

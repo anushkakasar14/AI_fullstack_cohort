@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1  id="heading1">Welcome TO DOM</h1>
+    <script>
+        //DOM  (document object model)
+        // it is hirarchy of our html page or document 
+        // when our web page loads on a browser it creates a dom object(tree based structure of our  html document)
+
+        // it is use to make our website dynamic. 
+        // js gets all the power to make our application powerful.
+
+        // use to connect js and html cdss together
+       
+       
+        //we can access html element using DOM Methods and Properties
+
+        
+        // Using HTML DOM we can access HTML elements 
+        // and we can add,remove,change and delete HTML elements,attributes,styling and Events
+        
+
+
+        let dom=document;
+        console.log(dom)
+
+        console.log(dom.head)
+        console.log(dom.body)
+
+
+        // DOM Method: to access html elements
+        // by id- document.getElementById() -mostly used in latest tech.
+        // by class- document.getElementByClassName()
+        // by tag name-document.getElementByTagName()
+        // by name-document.getElementByName()
+
+
+        // common
+        // fetch only first matching element
+        // querySelector -document.querySelector('.className/#idName/tagname')
+
+        // fetch all html elements using indexing
+        // querySelectorAll -document.querySelectorAl('.className/#idName/tagname')
+
+
+
+        // DOM properties:
+
+        // innerHTML:use to extract of fetch html content with including inside element as well
+        // innerText:only extract only text
+
+
+        // by id:
+
+        let result=document.getElementById('heading1')
+        console.log(result)
+
+
+        // get data
+        let result2=document.getElementById('heading1').innerHTML
+        console.log(result2)
+
+
+        let result3=document.getElementById('heading1').innerText
+        console.log(result3)
+
+
+        // we can access html element without DOM method
+        let res3=heading1.innerHTML
+        console.log(res3)
+
+
+
+        // set data
+        let result4=document.getElementById('heading1').innerText="hello this is frontend technology"
+        console.log(result4)
+
+
+    </script>
+</body>
+</html>

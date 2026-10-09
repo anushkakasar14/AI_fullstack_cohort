@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+
+        Function in JavaScript
+    </h1>
+    <button onclick="mult(10,20)">Click me</button>  //onclick event in function
+    <script>
+        // Function:(bunch of statements)
+        // its a reusable block of code that performs a specific task
+        // avoid writing the same code again and again
+        // we can call the function multiple times to perform that task
+        // define once and use it multiple times
+        // it takes input and returns output based on the input
+        // we can use same function with multiple different arguments 
+        
+        
+
+        // syntax:
+
+
+        // function declaration
+        // function functionName(parameters)
+        // {
+        //     // code to be executed
+        // }
+
+        // // function calling/invoked
+        // functionName();
+
+
+        // ex1
+        function Demo()
+        {
+            // logic
+            console.log(20+40);
+            console.log("Welcome to function in JavaScript");
+        }
+        Demo();
+
+
+
+
+        // ex2
+        function add()
+        {
+            
+            console.log(10+300);
+        }
+        add();
+
+
+        // function with parameters and arguments
+        // to make function dynamic
+
+        // parameters:values which are passed while function declaration
+        // argument:values which are passed while function calling i.e actual values
+
+        function Demo2(a,b)   //parameters
+        {
+            console.log(a+b);
+        }
+        Demo2(100, 300);  //arguments
+
+
+
+
+        // functions are mostly called on events like(onclick, mouseover, mouseout, keypress, keydown, keyup etc)
+
+        function mult(a,b)
+        {
+            console.log(a*b);
+        }
+    //    onclick event is used in button tag to call the function
+
+
+
+        // return statement: it is used to return the value from the function to the calling environment
+        // if we don't use return statement then the function will return undefined by default
+
+
+        function demo3(a,b)
+        {
+            return a+b;
+        }
+        let result = demo3(100,400)+200;  //function calling
+        console.log(result); //700
+
+
+    </script>
+</body>
+</html>

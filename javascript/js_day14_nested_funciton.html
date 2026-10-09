@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // nested callback
+        // function A(){
+        //     console.log("hello A")
+        // }
+
+
+
+// 
+        const sum=(x=0,y=0,...rest)=>
+        {
+            function add(){
+                console.log(x+y);
+            }add();
+        };
+        sum(5,10);
+        sum(50,100);
+        sum(20,30,50,60);
+
+
+
+        // inner function can be call by inner function 
+          const sum1=(x=0,y=0,...rest)=>
+        {
+            function add(a,b){
+                console.log(a+b);
+            }add(x,y);
+        };
+        sum1(5,10);
+        sum1(50,100);
+        sum1(20,30,50,60);
+
+    </script>
+</body>
+</html>

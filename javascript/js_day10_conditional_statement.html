@@ -28,6 +28,7 @@
         // while(condition)
         // {
         //     // block of code to be executed
+        //          inc/dec the value of variable to avoid infinite loop
         // }
 
 
@@ -120,30 +121,61 @@
 
 
         // ex:factorial of 2 to 4
-        let b = 2;
+        // let b = 2;
 
-        do {
-            let fact = 1;
-            let i = 1;
+        // do {
+        //     let fact = 1;
+        //     let i = 1;
 
-            do {
-                fact *= i;
+        //     do {
+        //         fact *= i;
+        //         i++;
+        //     } while (i <= b);
+
+        //     console.log("Factorial of " + b + " = " + fact);
+
+        //     b++;
+        // } while (b <= 4);
+
+
+        // ****************************************************************
+
+        // for loop:
+        // use for iterating
+        // one of the easiest way to write looping statements
+        // we can write looping statements in a single line
+
+
+        // syntax:
+        // for(initialization; condition; increment/decrement)
+        // {
+
+        // }
+
+
+        // ex1:
+        // for(let i=0; i<=30; i++)
+        // {
+        //     document.write("Welcome to MODERN JAVASCRIPT <br>");
+        // }
+
+
+        // IQ:-
+        // 1.we can write for loop wothout using initialization 
+
+
+        let i=0;
+        for(;;){
+            while(i<=10)
+            {
+                console.log("i");
                 i++;
-            } while (i <= b);
+            }
+        }
 
-            console.log("Factorial of " + b + " = " + fact);
-
-            b++;
-        } while (b <= 4);
-
-
-
-
-
+        // 2. we can write for loop without using condition
+        // 3. we can write for loop without using increment/decrement
 
     </script>
 </body>
-
-</body>
-
 </html>

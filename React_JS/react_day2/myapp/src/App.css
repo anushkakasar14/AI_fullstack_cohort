@@ -1,0 +1,454 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #111310;
+  color: #e8e6df;
+}
+
+.portfolio {
+  min-height: 100vh;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+  height: 75px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(17, 19, 16, 0.92);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  border-bottom: 1px solid #292c26;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #b6d957;
+  border-radius: 50%;
+
+  color: #b6d957;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+
+  box-shadow: 0 0 20px rgba(182, 217, 87, 0.15);
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #b6d957;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  min-height: 90vh;
+  padding: 80px 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(182, 217, 87, 0.08),
+      transparent 30%
+    );
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hello {
+  color: #b6d957;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(50px, 8vw, 95px);
+  line-height: 1;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #b6d957;
+}
+
+.hero h2 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #d1d0c9;
+
+  margin-bottom: 25px;
+}
+
+.intro {
+  max-width: 620px;
+  color: #92958c;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.btn {
+  padding: 13px 25px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.primary {
+  background: #b6d957;
+  color: #111310;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(182, 217, 87, 0.2);
+}
+
+.secondary {
+  border: 1px solid #3b4035;
+  color: #ddd;
+}
+
+.secondary:hover {
+  border-color: #b6d957;
+  color: #b6d957;
+}
+
+/* ---------------- LOGO ---------------- */
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #3d4532;
+
+  color: #b6d957;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 90px;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 60px rgba(182, 217, 87, 0.08),
+    inset 0 0 60px rgba(182, 217, 87, 0.04);
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section {
+  padding: 100px 10%;
+  border-top: 1px solid #252822;
+}
+
+.section-title {
+  color: #b6d957;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(30px, 5vw, 55px);
+  max-width: 800px;
+
+  margin-bottom: 30px;
+}
+
+.about-text {
+  max-width: 800px;
+
+  color: #969990;
+
+  line-height: 1.9;
+  font-size: 17px;
+
+  margin-bottom: 20px;
+}
+
+/* ---------------- EDUCATION ---------------- */
+
+.info-card {
+  max-width: 800px;
+
+  padding: 30px;
+
+  background: #181b16;
+
+  border: 1px solid #292d25;
+  border-radius: 10px;
+}
+
+.info-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  color: #969990;
+  margin-bottom: 15px;
+}
+
+.info-card span {
+  color: #b6d957;
+  font-size: 14px;
+}
+
+/* ---------------- SKILLS ---------------- */
+
+.skills-container {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.skill-card {
+  padding: 30px;
+
+  background: #181b16;
+
+  border: 1px solid #292d25;
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #66783b;
+}
+
+.skill-card h3 {
+  color: #b6d957;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  color: #92958c;
+  line-height: 1.7;
+}
+
+/* ---------------- PROJECTS ---------------- */
+
+.projects-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.project-card {
+  padding: 30px;
+
+  min-height: 280px;
+
+  background: #181b16;
+
+  border: 1px solid #292d25;
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: #66783b;
+}
+
+.project-card span {
+  color: #666b61;
+  font-size: 13px;
+}
+
+.project-card h3 {
+  margin: 35px 0 15px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 24px;
+}
+
+.project-card p {
+  color: #92958c;
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+.project-card small {
+  color: #b6d957;
+}
+
+/* ---------------- CAREER ---------------- */
+
+.career-section {
+  padding: 120px 10%;
+
+  text-align: center;
+
+  background: #181b16;
+}
+
+.career-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: clamp(35px, 6vw, 70px);
+
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+}
+
+.career-section p:last-child {
+  color: #92958c;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact p {
+  color: #92958c;
+  margin-bottom: 30px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  padding: 30px 10%;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid #292d25;
+
+  color: #696d65;
+
+  font-size: 13px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 70px 7%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-logo {
+    align-self: center;
+  }
+
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+  }
+
+  .section {
+    padding: 70px 7%;
+  }
+
+  .skills-container,
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 25px 7%;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

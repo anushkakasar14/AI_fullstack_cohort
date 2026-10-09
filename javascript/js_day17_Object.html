@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // object
+        // its an entity having methods and property
+        // we can store large amount of data in key:value pair
+        // JS is object based scripting language  becz everything in JS is OBJECT.
+        // here , seperate value
+
+        //syntax:
+        // const obj={key:value} 
+
+        const user = {
+            id: "#123",
+            age: 25,
+            role: "AI Engineer",
+            package: "10LPA",
+            experience: "2 YRS"
+        }
+        console.log(user)
+
+
+        // ********************************************************************************************
+
+        // ways to create object
+
+        // literal way:
+        // const obj={key:value} 
+
+        // creating instance of an object
+        // const user2=new object({id:"#1234",name:"Anushka",role:"AI Engineer"});
+        // console.log(user2);
+
+
+        // ****************************************************************************
+        // iterating /looping of object
+        // for in
+
+        // for (let x in user){
+        //     console.log(`${x}:${user[x]}`)     
+        //    }
+        // console.table(user[x]);
+
+
+
+
+
+        // ***********************************************************************
+        // access data using name indexing
+
+        const employee = {
+            id: 101,
+            name: "Anushka",
+            age: 22,
+            role: "AI Engineer",
+            department: "Technology",
+            salary: 60000,
+            isWorking: true,
+
+            address: {
+                city: "Pune",
+                state: "Maharashtra",
+                country: "India"
+            },
+
+            skills: [
+                "Python",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "AI"
+            ],
+
+            projects: [
+                {
+                    name: "AI Chatbot",
+                    technology: "Python",
+                    status: "Completed"
+                },
+                {
+                    name: "Portfolio Website",
+                    technology: "JavaScript",
+                    status: "In Progress"
+                },
+                {
+                    name: "AI Recommendation System",
+                    technology: "Python",
+                    status: "Pending"
+                }
+            ]
+        };
+
+        console.log(employee)
+        console.log(employee.name)  //to access data by this way1
+        // OR
+        console.log(employee["skills"])   //to access data by this way2
+
+        console.log(employee.department)
+
+        console.log(employee.address.city)
+        console.log(employee.address["country"]) //to access data form object inside object
+
+        // *************************************************************************
+        // array object:-
+
+        // const arrayObject=[
+        //     {
+
+        //     },
+        //     {
+
+        //     },
+        //     {
+
+        //     }
+        // ]
+
+        const employees = [
+            {
+                id: 101,
+                name: "Anushka",
+                role: "AI Engineer",
+                salary: 60000
+            },
+
+            {
+                id: 102,
+                name: "Rahul",
+                role: "Frontend Developer",
+                salary: 50000
+            },
+
+            {
+                id: 103,
+                name: "Priya",
+                role: "Backend Developer",
+                salary: 55000
+            }
+        ];
+        console.log(employees)
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

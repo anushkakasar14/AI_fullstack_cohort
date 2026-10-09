@@ -1,27 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-       
-        // consol.log(a);
-        // var a;
+
+        // let A = () => {
+        //     console.log("hello Arrow Funciton")
+        // }
+        // A()
 
 
-        // console.log(b);
-        // let b = 20;
+        // prime no.
 
-        // if ("") console.log("Yes");
-        // else console.log("No");
+        let num = Number(prompt("Enter a number"));
+        function prime(num) {
+
+            if (num <= 1)
+                return false;
+
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0)
+                    return false;//return keyword
+            }
+
+            return true;
+        }
+// ternary operator
+        document.write(prime(num) ? "Prime Number<br>" : "Not Prime Number<br>");
 
 
+
+
+
+        // ***********************************************************************
+        // ATM machine
+
+        let pin = Number(prompt("Enter Pin:"));
+        function checkpin(pin) {
+            if (pin == 12345)
+
+                return true;
+            else
+                return false;
+
+        }
+        if (checkpin(pin)) {
+            console.log("correct pin"); 
+
+            let balance = 10000;
+            let amt = Number(prompt("Enter the Withdraw Amount:"))
+            if (balance >= amt) {
+                balance = balance - amt;
+                document.write("withdraw Successful:"+amt );
+
+                
+                document.write("</br>Remaining Balance: " + balance );
+            } else {
+                document.write("Insufficient Balance");
+            }
+
+        } else {
+            document.write("Wrong PIN");
+        }
 
 
         
+
+
+
+
+
+
+
+
     </script>
 </body>
+
 </html>

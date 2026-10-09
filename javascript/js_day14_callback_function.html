@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // callback function
+        // useful for async execution
+        // i will call back later
+        // one function execute after another function finish their execution
+        // i.e passing one function inside into function as a argument,
+        // this is used while API calling
+
+// syntax:
+        //  function A()
+        //  {
+
+        //  }
+        //  function b()
+        //  {
+
+        //  }b(A)
+
+
+        // ex1.
+        function A()
+        {
+            console.log("hello A")
+        }
+        // A()
+        function B(callback)
+        {
+            // called as a function -A
+            callback()
+            console.log("hello B")
+
+            // passing one function inside into another function as a argument 
+        }
+        B(A)
+
+
+
+        // ex2.
+        function Greet()
+        {
+            console.log("hello good morning")
+        }
+        function User(callback,name)
+        {
+            callback()
+            console.log(`hello ${name}`)
+
+        }User(Greet,"Anushka")
+
+
+        // ex3.
+        // function X(name,skill)
+        // {
+        //     console.log(`hello name is ${name} and skill ${skill}`)
+        // }
+        // function Y()
+        
+    </script>
+</body>
+</html>

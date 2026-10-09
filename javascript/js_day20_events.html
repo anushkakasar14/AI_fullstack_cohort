@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Events In Js</h1>
+    <hr>
+    <button onclick="demo1()">click here</button>
+    <button ondblclick="demo2()">dbl click here</button>
+    <button oncontextmenu="demo3()">right click here</button>
+    <button onmouseover="demo4()">hover here</button>
+    <button onmouseleave="demo5()">leave here</button>
+    <script>
+        // events
+        // performing some operation when some action is performed by the user 
+        // JS is a Event based scripting language
+
+        // event prefix starts with 'on'
+
+
+
+        // 4 types of events
+        // mouse events
+        // keyboard events
+        // form events
+        // window events
+
+
+        // onclick-when we click on the element
+        function demo1() {
+            alert("you clicked on the button");
+        }
+        // ondblclick-when we double click on the element
+        function demo2() {
+            alert("you double clicked on the button");
+        }
+        // oncontextmenu-when we right-click on the element
+        function demo3() {
+            alert("you right-clicked on the button");
+        }
+        // onmouseover-when we hover the element
+        function demo4() {
+            alert("you hovered over the button");
+        }
+        // onmouseleave-when we leave from html elements
+        function demo5() {
+            alert("you left the button");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height:400px ;
+            width: 200px;
+            color:aqua;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Practice</h1>
+    <hr>
+    <button id="btn1" onclick="Demo()">click Me ☺️ </button>
+    <button id="addBtn">ADD</button>
+    <button id="removeBtn" onclick="RemoveBox()">Remove</button>
+    <button id="toggleBtn">Toggle</button>
+    <div class="box1" id="box1"></div>
+    
+    <p id="para1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, nesciunt omnis? Quia dolores, deleniti odit
+        quasi recusandae corporis nihil modi ab aliquid, eius culpa voluptatum error deserunt nisi possimus iste! Nobis,
+        nesciunt atque doloribus et vel natus neque, sint fuga asperiores provident voluptas harum voluptatem alias
+        illum. Minima, iure beatae?</p>
+
+    <script>
+        const Demo=()=>{
+            alert("hello dear")
+
+            // get
+           let res1=document.getElementById('para1').innerHTML
+           console.log(res1)
+
+            // set
+            // let res2=document.getElementById('para1').innerHTML="this is modern js"
+            
+
+            // css styling
+            // how to apply css using js
+            document.getElementById('para1').style.color="orange"
+        
+            document.getElementById('para1').style.backgroundColor="purple"
+
+
+            // additional properties
+            // classList:properties
+            // add/remove/toggle
+
+// remove
+            const RemoveBox=()=>{
+                document.getElementById('box1').classList.remove('box1')
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

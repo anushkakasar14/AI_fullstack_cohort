@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title> Calculator</title>
+
+  <style>
+    /* ========================================
+       RESET
+    ======================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ========================================
+       BODY
+    ======================================== */
+
+    body {
+      min-height: 100vh;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: #172033;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(99, 102, 241, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(14, 165, 233, 0.12),
+          transparent 30%
+        ),
+        #f6f8fc;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px 16px;
+
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       BACKGROUND ANIMATION
+    ======================================== */
+
+    .background-orb {
+      position: fixed;
+
+      border-radius: 50%;
+
+      pointer-events: none;
+
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 180px;
+      height: 180px;
+
+      background: rgba(99, 102, 241, 0.08);
+
+      top: 8%;
+      left: 8%;
+    }
+
+    .orb-two {
+      width: 130px;
+      height: 130px;
+
+      background: rgba(14, 165, 233, 0.08);
+
+      right: 10%;
+      bottom: 10%;
+
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(0, -25px);
+      }
+    }
+
+    /* ========================================
+       MAIN APP
+    ======================================== */
+
+    .app {
+      width: min(100%, 1050px);
+
+      display: grid;
+
+      grid-template-columns: 1.5fr 0.8fr;
+
+      gap: 20px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    /* ========================================
+       CALCULATOR CARD
+    ======================================== */
+
+    .calculator-card,
+    .history-card {
+      background: rgba(255, 255, 255, 0.82);
+
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
+      border-radius: 28px;
+
+      box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.10);
+
+      backdrop-filter: blur(20px);
+    }
+
+    .calculator-card {
+      padding: 24px;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+
+      border-radius: 13px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      color: white;
+
+      font-size: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #6366f1,
+          #4f46e5
+        );
+
+      box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.25);
+    }
+
+    .brand-text h1 {
+      font-size: 18px;
+
+      letter-spacing: -0.4px;
+    }
+
+    .brand-text p {
+      font-size: 11px;
+
+      color: #8791a5;
+
+      margin-top: 2px;
+    }
+
+    .status {
+      display: flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding: 7px 10px;
+
+      border-radius: 20px;
+
+      background: #ecfdf5;
+
+      color: #059669;
+
+      font-size: 10px;
+
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: #10b981;
+
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    /* ========================================
+       DISPLAY
+    ======================================== */
+
+    .display {
+      position: relative;
+
+      min-height: 170px;
+
+      padding: 24px;
+
+      border-radius: 22px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          145deg,
+          #111827,
+          #1e293b
+        );
+
+      overflow: hidden;
+
+      margin-bottom: 16px;
+    }
+
+    .display::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background: rgba(99, 102, 241, 0.14);
+
+      right: -70px;
+      top: -80px;
+    }
+
+    .display-top {
+      position: relative;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 35px;
+    }
+
+    .expression-label {
+      font-size: 10px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      color: #94a3b8;
+    }
+
+    .copy-btn {
+      border: none;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      color: #cbd5e1;
+
+      padding: 7px 10px;
+
+      border-radius: 8px;
+
+      font-size: 10px;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .expression {
+      position: relative;
+
+      min-height: 22px;
+
+      text-align: right;
+
+      color: #94a3b8;
+
+      font-size: 14px;
+
+      overflow: hidden;
+
+      white-space: nowrap;
+
+      text-overflow: ellipsis;
+    }
+
+    .result {
+      position: relative;
+
+      text-align: right;
+
+      font-size: clamp(36px, 7vw, 58px);
+
+      font-weight: 600;
+
+      letter-spacing: -2px;
+
+      margin-top: 7px;
+
+      overflow: hidden;
+
+      white-space: nowrap;
+
+      text-overflow: ellipsis;
+    }
+
+    /* ========================================
+       BUTTON GRID
+    ======================================== */
+
+    .buttons {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 10px;
+    }
+
+    button {
+      font-family: inherit;
+
+      cursor: pointer;
+    }
+
+    .calc-btn {
+      min-height: 64px;
+
+      border: 1px solid #e7ebf2;
+
+      border-radius: 17px;
+
+      background: #ffffff;
+
+      color: #1e293b;
+
+      font-size: 18px;
+
+      font-weight: 600;
+
+      box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.04);
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .calc-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 15px rgba(15, 23, 42, 0.08);
+    }
+
+    .calc-btn:active {
+      transform: scale(0.94);
+    }
+
+    .calc-btn:focus-visible,
+    .copy-btn:focus-visible,
+    .clear-history:focus-visible {
+      outline: 3px solid #c7d2fe;
+
+      outline-offset: 2px;
+    }
+
+    /* Operator */
+
+    .operator {
+      background: #eef2ff;
+
+      color: #4f46e5;
+
+      border-color: #e0e7ff;
+    }
+
+    /* Clear */
+
+    .clear {
+      background: #fff1f2;
+
+      color: #e11d48;
+
+      border-color: #ffe4e6;
+    }
+
+    /* Delete */
+
+    .delete {
+      background: #f8fafc;
+
+      color: #64748b;
+    }
+
+    /* Equals */
+
+    .equals {
+      background:
+        linear-gradient(
+          135deg,
+          #6366f1,
+          #4f46e5
+        );
+
+      color: white;
+
+      border: none;
+
+      box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.28);
+    }
+
+    .equals:hover {
+      background:
+        linear-gradient(
+          135deg,
+          #4f46e5,
+          #4338ca
+        );
+    }
+
+    /* ========================================
+       HISTORY CARD
+    ======================================== */
+
+    .history-card {
+      padding: 22px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-height: 100%;
+    }
+
+    .history-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding-bottom: 16px;
+
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .history-header h2 {
+      font-size: 15px;
+    }
+
+    .history-header span {
+      font-size: 10px;
+
+      color: #94a3b8;
+    }
+
+    .clear-history {
+      border: none;
+
+      background: none;
+
+      color: #6366f1;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+    }
+
+    .history-list {
+      flex: 1;
+
+      overflow-y: auto;
+
+      max-height: 400px;
+
+      padding-top: 12px;
+    }
+
+    .history-item {
+      padding: 13px;
+
+      border-radius: 13px;
+
+      background: #f8fafc;
+
+      margin-bottom: 8px;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+
+      animation: historyIn 0.3s ease;
+    }
+
+    .history-item:hover {
+      background: #eef2ff;
+
+      transform: translateX(3px);
+    }
+
+    @keyframes historyIn {
+      from {
+        opacity: 0;
+
+        transform: translateX(10px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform: translateX(0);
+      }
+    }
+
+    .history-expression {
+      color: #64748b;
+
+      font-size: 11px;
+
+      margin-bottom: 5px;
+    }
+
+    .history-result {
+      font-size: 16px;
+
+      font-weight: 700;
+
+      color: #1e293b;
+
+      text-align: right;
+    }
+
+    .empty-history {
+      height: 200px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      text-align: center;
+
+      color: #94a3b8;
+    }
+
+    .empty-history-icon {
+      font-size: 30px;
+
+      margin-bottom: 10px;
+
+      opacity: 0.7;
+    }
+
+    .empty-history p {
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .learning-note {
+      margin-top: 15px;
+
+      padding: 13px 15px;
+
+      border-radius: 13px;
+
+      background: #f8fafc;
+
+      border: 1px solid #edf0f5;
+
+      font-size: 10px;
+
+      color: #64748b;
+
+      line-height: 1.6;
+    }
+
+    .learning-note strong {
+      color: #4f46e5;
+    }
+
+    /* ========================================
+       TOAST
+    ======================================== */
+
+    .toast {
+      position: fixed;
+
+      left: 50%;
+
+      bottom: 25px;
+
+      transform:
+        translate(-50%, 20px);
+
+      padding: 10px 16px;
+
+      border-radius: 10px;
+
+      background: #111827;
+
+      color: white;
+
+      font-size: 12px;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: 0.3s;
+
+      z-index: 100;
+    }
+
+    .toast.show {
+      opacity: 1;
+
+      transform:
+        translate(-50%, 0);
+    }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 800px) {
+
+      .app {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+      }
+
+      .history-card {
+        min-height: 250px;
+      }
+
+      .history-list {
+        max-height: 220px;
+      }
+    }
+
+    @media (max-width: 420px) {
+
+      body {
+        padding: 15px 10px;
+      }
+
+      .calculator-card,
+      .history-card {
+        border-radius: 22px;
+
+        padding: 16px;
+      }
+
+      .calc-btn {
+        min-height: 56px;
+
+        border-radius: 14px;
+
+        font-size: 17px;
+      }
+
+      .display {
+        min-height: 150px;
+
+        padding: 19px;
+      }
+
+      .status {
+        display: none;
+      }
+    }
+
+    /* Reduced motion */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background decoration -->
+
+  <div class="background-orb orb-one"></div>
+
+  <div class="background-orb orb-two"></div>
+
+
+  <main class="app">
+
+    <!-- ======================================
+         CALCULATOR
+    ======================================= -->
+
+    <section class="calculator-card">
+
+      <!-- Header -->
+
+      <header class="header">
+
+        <div class="brand">
+
+          <div class="brand-icon">
+            ∑
+          </div>
+
+          <div class="brand-text">
+
+         
+
+            <p>Calculator</p>
+
+          </div>
+
+        </div>
+
+
+        
+
+      </header>
+
+
+      <!-- Display -->
+
+      <section class="display">
+
+        <div class="display-top">
+
+          <span class="expression-label">
+             Expression
+          </span>
+
+          <button
+            class="copy-btn"
+            id="copyBtn"
+            type="button"
+          >
+            Copy Result
+          </button>
+
+        </div>
+
+
+        <div
+          class="expression"
+          id="expression"
+        >
+        </div>
+
+
+        <div
+          class="result"
+          id="result"
+          aria-live="polite"
+        >
+          0
+        </div>
+
+      </section>
+
+
+      <!-- Calculator Buttons -->
+
+      <section class="buttons">
+
+        <!-- Row 1 -->
+
+        <button
+          class="calc-btn clear"
+          data-action="clear"
+          type="button"
+        >
+          AC
+        </button>
+
+        <button
+          class="calc-btn delete"
+          data-action="delete"
+          type="button"
+        >
+          ⌫
+        </button>
+
+        <button
+          class="calc-btn operator"
+          data-operator="%"
+          type="button"
+        >
+          %
+        </button>
+
+        <button
+          class="calc-btn operator"
+          data-operator="/"
+          type="button"
+        >
+          ÷
+        </button>
+
+
+        <!-- Row 2 -->
+
+        <button
+          class="calc-btn"
+          data-number="7"
+          type="button"
+        >
+          7
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="8"
+          type="button"
+        >
+          8
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="9"
+          type="button"
+        >
+          9
+        </button>
+
+        <button
+          class="calc-btn operator"
+          data-operator="*"
+          type="button"
+        >
+          ×
+        </button>
+
+
+        <!-- Row 3 -->
+
+        <button
+          class="calc-btn"
+          data-number="4"
+          type="button"
+        >
+          4
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="5"
+          type="button"
+        >
+          5
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="6"
+          type="button"
+        >
+          6
+        </button>
+
+        <button
+          class="calc-btn operator"
+          data-operator="-"
+          type="button"
+        >
+          −
+        </button>
+
+
+        <!-- Row 4 -->
+
+        <button
+          class="calc-btn"
+          data-number="1"
+          type="button"
+        >
+          1
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="2"
+          type="button"
+        >
+          2
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="3"
+          type="button"
+        >
+          3
+        </button>
+
+        <button
+          class="calc-btn operator"
+          data-operator="+"
+          type="button"
+        >
+          +
+        </button>
+
+
+        <!-- Row 5 -->
+
+        <button
+          class="calc-btn"
+          data-number="0"
+          type="button"
+        >
+          0
+        </button>
+
+        <button
+          class="calc-btn"
+          data-number="."
+          type="button"
+        >
+          .
+        </button>
+
+        <button
+          class="calc-btn equals"
+          data-action="calculate"
+          type="button"
+          style="grid-column: span 2;"
+        >
+          = Calculate
+        </button>
+
+      </section>
+
+
+      
+
+      
+
+    </section>
+
+
+    <!-- ======================================
+         HISTORY
+    ======================================= -->
+
+    <aside class="history-card">
+
+      <div class="history-header">
+
+        <div>
+
+          <h2> History</h2>
+
+          <span>Recent calculations</span>
+
+        </div>
+
+        <button
+          class="clear-history"
+          id="clearHistory"
+          type="button"
+        >
+          Clear
+        </button>
+
+      </div>
+
+
+      <div
+        class="history-list"
+        id="historyList"
+      >
+
+        <div class="empty-history">
+
+          <div class="empty-history-icon">
+            🧮
+          </div>
+
+          <p>
+            Your calculations<br>
+            will appear here.
+          </p>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <!-- Toast -->
+
+  <div
+    class="toast"
+    id="toast"
+  >
+    Result copied!
+  </div>
+
+
+  <script>
+
+    /* ========================================
+       DOM ELEMENTS
+    ======================================== */
+
+    const resultDisplay =
+      document.getElementById("result");
+
+    const expressionDisplay =
+      document.getElementById("expression");
+
+    const buttons =
+      document.querySelector(".buttons");
+
+    const historyList =
+      document.getElementById("historyList");
+
+    const clearHistoryButton =
+      document.getElementById("clearHistory");
+
+    const copyButton =
+      document.getElementById("copyBtn");
+
+    const toast =
+      document.getElementById("toast");
+
+
+    /* ========================================
+       VARIABLES
+    ======================================== */
+
+    let currentNumber = "";
+
+    let previousNumber = "";
+
+    let selectedOperator = "";
+
+    let expression = "";
+
+    let calculationHistory = [];
+
+
+    /* ========================================
+       ADD NUMBER
+    ======================================== */
+
+    function addNumber(number) {
+
+      /*
+        Prevent multiple decimal points
+      */
+
+      if (
+        number === "." &&
+        currentNumber.includes(".")
+      ) {
+        return;
+      }
+
+
+      /*
+        Prevent multiple leading zeros
+      */
+
+      if (
+        currentNumber === "0" &&
+        number !== "."
+      ) {
+        currentNumber = "";
+      }
+
+
+      currentNumber += number;
+
+      updateDisplay();
+    }
+
+
+    /* ========================================
+       SELECT OPERATOR
+    ======================================== */
+
+    function selectOperator(operator) {
+
+      /*
+        Don't allow operator without number
+      */
+
+      if (currentNumber === "") {
+        return;
+      }
+
+
+      /*
+        If previous calculation exists,
+        calculate it first.
+      */
+
+      if (
+        previousNumber !== "" &&
+        selectedOperator !== ""
+      ) {
+
+        calculate();
+
+      }
+
+
+      previousNumber = currentNumber;
+
+      selectedOperator = operator;
+
+      currentNumber = "";
+
+
+      expression =
+        `${previousNumber} ${getOperatorSymbol(operator)}`;
+
+
+      updateDisplay();
+    }
+
+
+    /* ========================================
+       OPERATOR SYMBOL
+    ======================================== */
+
+    function getOperatorSymbol(operator) {
+
+      if (operator === "*") {
+        return "×";
+      }
+
+      if (operator === "/") {
+        return "÷";
+      }
+
+      if (operator === "-") {
+        return "−";
+      }
+
+      return operator;
+    }
+
+
+    /* ========================================
+       CALCULATE
+    ======================================== */
+
+    function calculate() {
+
+      if (
+        previousNumber === "" ||
+        currentNumber === "" ||
+        selectedOperator === ""
+      ) {
+        return;
+      }
+
+
+      const firstNumber =
+        Number(previousNumber);
+
+      const secondNumber =
+        Number(currentNumber);
+
+      let result;
+
+
+      /*
+        Addition
+      */
+
+      if (selectedOperator === "+") {
+
+        result =
+          firstNumber + secondNumber;
+
+      }
+
+
+      /*
+        Subtraction
+      */
+
+      else if (selectedOperator === "-") {
+
+        result =
+          firstNumber - secondNumber;
+
+      }
+
+
+      /*
+        Multiplication
+      */
+
+      else if (selectedOperator === "*") {
+
+        result =
+          firstNumber * secondNumber;
+
+      }
+
+
+      /*
+        Division
+      */
+
+      else if (selectedOperator === "/") {
+
+        /*
+          Prevent division by zero
+        */
+
+        if (secondNumber === 0) {
+
+          showError(
+            "Cannot divide by zero"
+          );
+
+          return;
+        }
+
+        result =
+          firstNumber / secondNumber;
+
+      }
+
+
+      /*
+        Modulus
+      */
+
+      else if (selectedOperator === "%") {
+
+        result =
+          firstNumber % secondNumber;
+
+      }
+
+
+      /*
+        Remove floating-point noise
+      */
+
+      result =
+        Number(result.toFixed(8));
+
+
+      /*
+        Create expression
+      */
+
+      const fullExpression =
+        `${formatNumber(firstNumber)}
+         ${getOperatorSymbol(selectedOperator)}
+         ${formatNumber(secondNumber)}`;
+
+
+      /*
+        Add to history
+      */
+
+      addToHistory(
+        fullExpression,
+        result
+      );
+
+
+      /*
+        Update calculator
+      */
+
+      currentNumber =
+        String(result);
+
+      previousNumber = "";
+
+      selectedOperator = "";
+
+      expression =
+        `${fullExpression} =`;
+
+
+      updateDisplay();
+
+    }
+
+
+    /* ========================================
+       FORMAT NUMBER
+    ======================================== */
+
+    function formatNumber(number) {
+
+      return Number(number)
+        .toLocaleString(
+          "en-US",
+          {
+            maximumFractionDigits: 8
+          }
+        );
+
+    }
+
+
+    /* ========================================
+       UPDATE DISPLAY
+    ======================================== */
+
+    function updateDisplay() {
+
+      /*
+        Expression
+      */
+
+      expressionDisplay.textContent =
+        expression;
+
+
+      /*
+        Result
+      */
+
+      if (currentNumber === "") {
+
+        resultDisplay.textContent = "0";
+
+      } else {
+
+        resultDisplay.textContent =
+          formatNumber(
+            Number(currentNumber)
+          );
+
+      }
+
+    }
+
+
+    /* ========================================
+       CLEAR CALCULATOR
+    ======================================== */
+
+    function clearCalculator() {
+
+      currentNumber = "";
+
+      previousNumber = "";
+
+      selectedOperator = "";
+
+      expression = "";
+
+      updateDisplay();
+
+    }
+
+
+    /* ========================================
+       DELETE LAST NUMBER
+    ======================================== */
+
+    function deleteNumber() {
+
+      if (
+        currentNumber === "" ||
+        currentNumber === "Error"
+      ) {
+        return;
+      }
+
+
+      currentNumber =
+        currentNumber.slice(0, -1);
+
+
+      updateDisplay();
+
+    }
+
+
+    /* ========================================
+       ERROR
+    ======================================== */
+
+    function showError(message) {
+
+      currentNumber = "Error";
+
+      expression = message;
+
+      previousNumber = "";
+
+      selectedOperator = "";
+
+
+      updateDisplay();
+
+
+      /*
+        Automatically reset after error
+      */
+
+      setTimeout(function () {
+
+        clearCalculator();
+
+      }, 1800);
+
+    }
+
+
+    /* ========================================
+       HISTORY
+    ======================================== */
+
+    function addToHistory(
+      calculation,
+      result
+    ) {
+
+      calculationHistory.unshift({
+
+        calculation:
+          calculation,
+
+        result:
+          result
+
+      });
+
+
+      /*
+        Keep only last 10
+      */
+
+      if (
+        calculationHistory.length > 10
+      ) {
+
+        calculationHistory.pop();
+
+      }
+
+
+      renderHistory();
+
+    }
+
+
+    /* ========================================
+       RENDER HISTORY
+    ======================================== */
+
+    function renderHistory() {
+
+      historyList.innerHTML = "";
+
+
+      /*
+        Empty history
+      */
+
+      if (
+        calculationHistory.length === 0
+      ) {
+
+        historyList.innerHTML = `
+
+          <div class="empty-history">
+
+            <div class="empty-history-icon">
+              🧮
+            </div>
+
+            <p>
+              Your calculations<br>
+              will appear here.
+            </p>
+
+          </div>
+
+        `;
+
+        return;
+      }
+
+
+      /*
+        Create history items
+      */
+
+      calculationHistory.forEach(
+        function (item) {
+
+          const historyItem =
+            document.createElement("div");
+
+
+          historyItem.className =
+            "history-item";
+
+
+          historyItem.innerHTML = `
+
+            <div class="history-expression">
+              ${item.calculation}
+            </div>
+
+            <div class="history-result">
+              = ${formatNumber(item.result)}
+            </div>
+
+          `;
+
+
+          /*
+            Click history item
+            to reuse result
+          */
+
+          historyItem.addEventListener(
+            "click",
+            function () {
+
+              currentNumber =
+                String(item.result);
+
+              expression =
+                item.calculation + " =";
+
+              updateDisplay();
+
+            }
+          );
+
+
+          historyList.appendChild(
+            historyItem
+          );
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       CLEAR HISTORY
+    ======================================== */
+
+    clearHistoryButton.addEventListener(
+      "click",
+      function () {
+
+        calculationHistory = [];
+
+        renderHistory();
+
+      }
+    );
+
+
+    /* ========================================
+       COPY RESULT
+    ======================================== */
+
+    copyButton.addEventListener(
+      "click",
+      function () {
+
+        const value =
+          resultDisplay.textContent;
+
+
+        /*
+          Clipboard API
+        */
+
+        if (
+          navigator.clipboard &&
+          value !== "Error"
+        ) {
+
+          navigator.clipboard
+            .writeText(value)
+            .then(
+              function () {
+
+                showToast(
+                  "Result copied!"
+                );
+
+              }
+            )
+            .catch(
+              function () {
+
+                showToast(
+                  "Copy unavailable"
+                );
+
+              }
+            );
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       TOAST
+    ======================================== */
+
+    function showToast(message) {
+
+      toast.textContent =
+        message;
+
+      toast.classList.add("show");
+
+
+      setTimeout(
+        function () {
+
+          toast.classList.remove(
+            "show"
+          );
+
+        },
+        1800
+      );
+
+    }
+
+
+    /* ========================================
+       BUTTON EVENTS
+    ======================================== */
+
+    buttons.addEventListener(
+      "click",
+      function (event) {
+
+        const button =
+          event.target.closest("button");
+
+
+        if (!button) {
+          return;
+        }
+
+
+        /*
+          Number
+        */
+
+        if (
+          button.dataset.number !==
+          undefined
+        ) {
+
+          addNumber(
+            button.dataset.number
+          );
+
+          return;
+        }
+
+
+        /*
+          Operator
+        */
+
+        if (
+          button.dataset.operator !==
+          undefined
+        ) {
+
+          selectOperator(
+            button.dataset.operator
+          );
+
+          return;
+        }
+
+
+        /*
+          Clear
+        */
+
+        if (
+          button.dataset.action ===
+          "clear"
+        ) {
+
+          clearCalculator();
+
+          return;
+        }
+
+
+        /*
+          Delete
+        */
+
+        if (
+          button.dataset.action ===
+          "delete"
+        ) {
+
+          deleteNumber();
+
+          return;
+        }
+
+
+        /*
+          Calculate
+        */
+
+        if (
+          button.dataset.action ===
+          "calculate"
+        ) {
+
+          calculate();
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       KEYBOARD SUPPORT
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        const key =
+          event.key;
+
+
+        /*
+          Numbers + decimal
+        */
+
+        if (
+          (key >= "0" &&
+           key <= "9") ||
+          key === "."
+        ) {
+
+          addNumber(key);
+
+          return;
+        }
+
+
+        /*
+          Operators
+        */
+
+        if (
+          key === "+" ||
+          key === "-" ||
+          key === "*" ||
+          key === "/" ||
+          key === "%"
+        ) {
+
+          selectOperator(key);
+
+          return;
+        }
+
+
+        /*
+          Enter
+        */
+
+        if (
+          key === "Enter" ||
+          key === "="
+        ) {
+
+          calculate();
+
+          return;
+        }
+
+
+        /*
+          Backspace
+        */
+
+        if (
+          key === "Backspace"
+        ) {
+
+          deleteNumber();
+
+          return;
+        }
+
+
+        /*
+          Escape
+        */
+
+        if (
+          key === "Escape"
+        ) {
+
+          clearCalculator();
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       INITIALIZE
+    ======================================== */
+
+    updateDisplay();
+
+  </script>
+
+</body>
+</html>

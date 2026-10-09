@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function Demo(a,b)
+    // {
+    //     console.log(a+b);
+    // }
+    // Demo(10,20);
+    // Demo(100,200,300,400);  //JS by default ignores extra arguments without any error
+    
+    
+    // default parameter:
+    function Emp(name,skill)
+    {
+        return'your name is ${name} and your skill is ${skill}';
+
+    } 
+    // let emp1=Emp(100,true);
+    // document.write(emp1);//wrong values 
+
+    // let emp2=Emp("ABC");
+    // document.write(emp2);//undefine
+
+
+    // solution: we can assign default values while funcion declaration to avoid undefined values or errors
+    // useful when we didnt pass enough argumemts to the function
+    function add(x=0,y=0,z=0)  //z=0 is default parameter
+    {
+      console.log(x+y+z);
+    }
+    add(20,40,60);  //120
+    add(20,40);  //60
+    add();
+    add(10,250,350,50,50,40,50); //extra arguments are ignored by JS without any error
+
+
+     function multi(x=1,y=1,z=1)  //by default parameter
+    {
+      console.log(x*y*z);
+    }
+    multi(20,40,60);  //48000
+    multi(20,40);    //800
+    multi();        //1
+// this example tell you that by default parameters are depend on what type of operation we are performing. if its addition then default value should be 0 and if its multiplication then default value should be 1
+
+
+    add(10,20,30,50,50,40,50); //extra arguments are ignored by JS without any error
+
+// **********************************************************
+// IMP Point for Interview
+// REST PARAMETERS: ES6 feature modern JS feature
+
+// indicated by ... (three dots) before the parameter name
+// when we passes extra additional argumentss
+// The rest parameter allows a function to accept any number of arguments and collect them into an array.
+// it returns rest value in an array format
+// 
+let sum=0;
+function addition(a=0,b=0,c=0, ...input)
+{
+    console.log(a+b+c)
+    console.log(input); //returns rest values in an array format
+    for(let x in input)
+    {
+        // console.log(x); returns rest values one by one
+        sum+=x
+    }
+}
+// addition();
+addition(100,200,300);
+addition(1000,2000,3000,40,50,60); 
+
+
+
+// ***********************************************************
+// INTERVIEW QUESTION
+
+// forin / forof looping statement:use to iterate array and object
+// ES6 feature
+// it is used to iterate over the array or object
+
+
+
+
+// forin
+// ude to iterate array object
+// it returns key and value pair in an array format
+// syntax:
+const arr=[10,20,30,40,50];
+
+for(let x in arr)
+{
+  
+    // console.log(x); //returns index of the array
+    // console.log(arr[x]); //returns value of the array
+    console.log(`index is ${x} and value is ${arr[x]}`); //returns index and value of the array
+}
+
+// forof
+// it returns only value of the array
+// it must be iterable i.e index
+  
+
+for(let x of arr)
+{
+    
+    console.log(x); //returns value of the array
+}
+
+
+    </script>
+</body>
+</html>

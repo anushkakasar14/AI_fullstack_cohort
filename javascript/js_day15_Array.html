@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Array -->
+     <script>
+        // is a collection of similar or different type of data 
+        // its a container where data is stored
+        //Array is mutable 
+        // indexing starts from 0
+        // stored in []
+        // Array is special type of object in js
+        // we can store any type of data in Array
+        // its non primitive data type derived from primitive data types
+
+
+        // ex:
+        // let role=["admin","super-admin","user"]
+        // let skilld=["html","css","js","react"]
+        // let AccType=["Savings","Current","FD","RD"]
+// ************************************************************************
+
+        // literal way/normal way
+        const arr=[10,20,"ABC",null,true,["html","css"]]
+        console.log(arr)
+        console.log(typeof arr)
+
+// *************************************************************************
+
+        // creating instance of an Array using new keyword
+        
+        const arr2=new Array("html","css",20)
+        console.log(arr2)
+        console.log(typeof arr2)
+
+
+
+
+ // ************************************************************************
+//  iterate /looping
+let skills=["html","css","js","react","node","python"]
+console.log(skills)
+console.log(skills[1])
+
+
+// to calculate length of array
+// length calculation starts from 1
+console.log(skills.length) //7
+
+
+// while loop
+// let i=0;
+// while(i<skills.length){
+//     console.log(skills[i])
+//     i++;
+// }
+
+
+// for loop
+// let i=0;
+// for(let i=0; i < skills.length; i++){
+//     console.log(skills[i])
+// }
+
+
+// forin
+// it returns key:value/index
+
+
+// forof
+// it returns value
+
+
+
+
+
+
+// *****************************************************************
+// access elements by number indexing
+const array=[100,2.0,200,500,true,[1000,2000,3000,["html","css"]],{"id":1}]
+console.log(array)
+console.log(array[5])
+console.log(array[5][3])
+console.log(array[6])
+
+
+
+
+
+
+
+
+
+
+     </script>
+</body>
+</html>
